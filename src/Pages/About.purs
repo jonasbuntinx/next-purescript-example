@@ -1,4 +1,4 @@
-module Pages.About (default) where
+module Pages.About (about) where
 
 import Prelude
 
@@ -13,5 +13,3 @@ component = createComponent "About"
 about :: Props -> JSX
 about props = props # makeStateless component \_ ->
   R.div_ [ R.text "About" ]
-
-default = about

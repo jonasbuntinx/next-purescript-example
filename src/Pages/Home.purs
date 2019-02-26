@@ -1,4 +1,4 @@
-module Pages.Home (default) where
+module Pages.Home (home) where
 
 import Prelude
 
@@ -13,5 +13,3 @@ component = createComponent "Home"
 home :: Props -> JSX
 home props = props # makeStateless component \_ ->
   R.div_ [ R.text "Welcome to next.js!" ]
-
-default = home
