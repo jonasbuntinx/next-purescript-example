@@ -1,4 +1,4 @@
-module Home (default) where
+module Pages.Home (default) where
 
 import Prelude
 
