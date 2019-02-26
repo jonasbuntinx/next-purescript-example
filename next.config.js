@@ -62,6 +62,6 @@ const withPurescript = (nextConfig = {}) => {
 module.exports = withPurescript({
   pursLoaderOptions: {
     src: ['bower_components/purescript-*/src/**/*.purs', 'pages/**/*.purs'],
-    bundle: false
+    bundle: true
   }
 })
