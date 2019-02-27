@@ -1,3 +1,3 @@
-import { home } from '../src/Pages/Home.purs';
+import { home } from '../output/Pages.Home/index.js';
 
 export default home;

@@ -1,18 +1,30 @@
 {
+  "name": "next-purescript-example",
+  "version": "0.1.0",
+  "description": "Example app using Next.js with Purescript",
+  "keywords": ["Next.js", "Purescript", "React", "SSR"],
+  "author": "Jonas Buntinx",
+  "license": "MIT",
   "dependencies": {
     "next": "^8.0.3",
-    "purescript": "^0.12.3",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
   },
   "devDependencies": {
-    "next-purescript": "jonasbuntinx/next-purescript",
-    "purs-loader": "^3.3.0"
+    "bower": "^1.8.8",
+    "pscid": "^2.6.0",
+    "pulp": "^12.3.1",
+    "purescript": "^0.12.3",
+    "purescript-psa": "^0.7.3"
   },
   "scripts": {
-    "postinstall": "bower install",
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "postinstall": "$(yarn bin)/bower install",
+    "clean": "rm -Rf .next .pulp-cache output",
+    "dev": "$(yarn bin)/pulp --watch build & $(yarn bin)/next",
+    "pscid:build": "$(yarn bin)/pulp build",
+    "build": "$(yarn bin)/pulp build && $(yarn bin)/next build",
+    "start": "$(yarn bin)/next start",
+    "id": "$(yarn bin)/pscid",
+    "test": "$(yarn bin)/pulp test"
   }
 }

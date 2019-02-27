@@ -1,3 +1,3 @@
-import { about } from '../src/Pages/About.purs';
+import { about } from '../output/Pages.About/index.js';
 
 export default about;

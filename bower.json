@@ -1,5 +1,5 @@
 {
-  "name": "temp2",
+  "name": "next-purescript-example",
   "ignore": [
     "**/.*",
     "node_modules",
