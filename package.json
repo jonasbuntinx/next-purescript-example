@@ -10,6 +10,7 @@
     "purs-loader": "^3.3.0"
   },
   "scripts": {
+    "postinstall" : "bower install",
     "dev": "next",
     "build": "next build",
     "start": "next start"
