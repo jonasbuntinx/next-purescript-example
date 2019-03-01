@@ -1,5 +1,3 @@
-import { home, getInitialProps } from '../output/Pages.Home/index.js';
-
-home.getInitialProps = getInitialProps
+import { home } from '../output/Pages.Home/index.js';
 
 export default home;
