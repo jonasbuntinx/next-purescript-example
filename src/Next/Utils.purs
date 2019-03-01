@@ -16,13 +16,13 @@ import React.Basic (JSX)
 foreign import withGetInitialPropsImpl
   :: forall props
   . EffectFn1 Foreign (Promise { | props })
-  -> ( { | props } -> JSX)
-  -> ( { | props } -> JSX)
+  -> ({ | props } -> JSX)
+  -> ({ | props } -> JSX)
 
 withGetInitialProps 
   :: forall props
   . (Either String Context -> Aff { | props }) 
-  -> ( { | props } -> JSX)
-  -> ( { | props } -> JSX)
+  -> ({ | props } -> JSX)
+  -> ({ | props } -> JSX)
 withGetInitialProps f = withGetInitialPropsImpl
   $ mkEffectFn1 $ fromAff <<< f <<< lmap show <<< runExcept <<< decode
