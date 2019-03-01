@@ -18,9 +18,9 @@ component :: Component Props
 component = createComponent "Home"
 
 home :: Props -> JSX
-home = Next.withGetInitialProps getInitialProps $ make component { initialState: unit, render }
+home = Next.withInitialProps getInitialProps $ make component { initialState: unit, render }
 
-  where 
+  where
 
     render :: forall state. Self Props state -> JSX
     render self = 
