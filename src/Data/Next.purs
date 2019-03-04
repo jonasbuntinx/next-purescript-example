@@ -13,8 +13,8 @@ import Foreign.Object (Object)
 newtype Context = Context
   { err :: Maybe Foreign
   , req :: Maybe Foreign
-  , jsonPageRes :: Maybe Foreign
   , res :: Maybe Foreign
+  , jsonPageRes :: Maybe Foreign
   , pathname :: Maybe String
   , query :: Maybe (Object String)
   , asPath :: Maybe String }
