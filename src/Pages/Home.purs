@@ -3,6 +3,7 @@ module Pages.Home (home) where
 import Prelude
 
 import Data.Either (Either(..))
+import Data.Maybe (Maybe(..))
 import Data.Next (Context(..))
 import Effect.Aff (Aff)
 import Effect.Console (log)
@@ -38,9 +39,11 @@ home = Next.withInitialProps getInitialProps $ make component { initialState: un
     getInitialProps :: Either String Context -> Aff Props
     getInitialProps ctx = 
       case ctx of 
-        Right (Context { pathname }) -> do
+        Right (Context { pathname: Just pathname }) -> do
           let _ = unsafePerformEffect $ log $ pathname
           pure { header: "Home" }
         Left e -> do
           let _ = unsafePerformEffect $ log $ e
+          pure { header: "Error" }
+        _ -> do
           pure { header: "Error" }
