@@ -4,11 +4,11 @@ import Prelude
 
 import Data.Either (Either(..))
 import Data.Maybe (Maybe(..))
-import Data.Next (Context(..))
 import Effect.Aff (Aff)
 import Effect.Console (log)
 import Effect.Unsafe (unsafePerformEffect)
 import Next.Components as N
+import Next.Data (Context(..))
 import Next.Utils as Next
 import React.Basic (Component, JSX, Self, createComponent, make)
 import React.Basic.DOM as R

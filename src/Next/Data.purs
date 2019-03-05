@@ -1,4 +1,4 @@
-module Data.Next where
+module Next.Data where
 
 import Prelude
 
