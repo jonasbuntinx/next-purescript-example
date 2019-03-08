@@ -1,10 +1,3 @@
 "use strict";
 
-var React = require("react");
-var Link = require('next/link').default;
-
-exports.link = function() {
-  return function(props) {
-    return React.createElement(Link, props);
-  }
-}
+exports.link_ = require('next/link').default;
