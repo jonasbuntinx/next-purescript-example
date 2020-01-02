@@ -7,4 +7,8 @@
 /.psc*
 /.purs*
 /.psa*
+/dist/
 /.next/
+/.cache/
+/.spago/
+/*.log

@@ -2,78 +2,77 @@ module Next.Components where
 
 import Prim.Row (class Union)
 import React.Basic (JSX, ReactComponent, element)
-import React.Basic.DOM (SharedProps)
 
-type Props_link =
-  ( children :: JSX
-  , href :: String
-  , as :: String
-  , prefetch :: Boolean
-  , replace :: Boolean
-  , passHref :: Boolean
-  , scroll :: Boolean
-  )
+type Props_link
+  = ( children :: JSX
+    , href :: String
+    , as :: String
+    , prefetch :: Boolean
+    , replace :: Boolean
+    , passHref :: Boolean
+    , scroll :: Boolean
+    )
 
-link
-  :: forall props props_
-   . Union props props_ (SharedProps Props_link)
-  => Record props
-  -> JSX
-link props = element linkComponent props
+link ::
+  forall attrs attrs_.
+  Union attrs attrs_ Props_link =>
+  Record attrs ->
+  JSX
+link attrs = element linkComponent attrs
 
-foreign import linkComponent :: forall props. ReactComponent props
+foreign import linkComponent :: forall attrs. ReactComponent attrs
 
-type Props_html =
-  ( children :: Array JSX
-  )
+type Props_html
+  = ( children :: Array JSX
+    )
 
-html
-  :: forall props props_
-   . Union props props_ (SharedProps Props_html)
-  => Record props
-  -> JSX
-html props = element htmlComponent props
+html ::
+  forall attrs attrs_.
+  Union attrs attrs_ Props_html =>
+  Record attrs ->
+  JSX
+html attrs = element htmlComponent attrs
 
-foreign import htmlComponent :: forall props. ReactComponent props
+foreign import htmlComponent :: forall attrs. ReactComponent attrs
 
-type Props_head =
-  ( children :: Array JSX
-  , nonce :: String
-  , crossOrigin :: String
-  )
+type Props_head
+  = ( children :: Array JSX
+    , nonce :: String
+    , crossOrigin :: String
+    )
 
-head
-  :: forall props props_
-   . Union props props_ (SharedProps Props_head)
-  => Record props
-  -> JSX
-head props = element headComponent props
+head ::
+  forall attrs attrs_.
+  Union attrs attrs_ Props_head =>
+  Record attrs ->
+  JSX
+head attrs = element headComponent attrs
 
-foreign import headComponent :: forall props. ReactComponent props
+foreign import headComponent :: forall attrs. ReactComponent attrs
 
-type Props_main =
-  ( children :: Array JSX )
+type Props_main
+  = ( children :: Array JSX )
 
-main
-  :: forall props props_
-   . Union props props_ (SharedProps Props_main)
-  => Record props
-  -> JSX
-main props = element mainComponent props
+main ::
+  forall attrs attrs_.
+  Union attrs attrs_ Props_main =>
+  Record attrs ->
+  JSX
+main attrs = element mainComponent attrs
 
-foreign import mainComponent :: forall props. ReactComponent props
+foreign import mainComponent :: forall attrs. ReactComponent attrs
 
-type Props_nextScript =
-  ( children :: Array JSX
-  , nonce :: String
-  , crossOrigin :: String
-  )
+type Props_nextScript
+  = ( children :: Array JSX
+    , nonce :: String
+    , crossOrigin :: String
+    )
 
-nextScript
-  :: forall props props_
-   . Union props props_ (SharedProps Props_nextScript)
-  => Record props
-  -> JSX
-nextScript props = element nextScriptComponent props
+nextScript ::
+  forall attrs attrs_.
+  Union attrs attrs_ Props_nextScript =>
+  Record attrs ->
+  JSX
+nextScript attrs = element nextScriptComponent attrs
 
-foreign import nextScriptComponent :: forall props. ReactComponent props
+foreign import nextScriptComponent :: forall attrs. ReactComponent attrs
