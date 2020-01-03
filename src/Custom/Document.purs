@@ -10,11 +10,7 @@ render self =
     { children:
       [ N.head
           { children:
-            [ R.link
-                { rel: "stylesheet"
-                , href: "https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
-                }
-            ]
+            []
           }
       , R.body_
           [ N.main {}
