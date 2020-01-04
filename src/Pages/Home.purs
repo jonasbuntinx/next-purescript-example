@@ -7,8 +7,7 @@ import Effect (Effect)
 import Effect.Class (liftEffect)
 import Effect.Console as Console
 import Next.Components as N
-import Next.Data (Context(..))
-import Next.Hooks as Next
+import Next.Data (Context(..), attachGetInitialProps)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
@@ -17,8 +16,10 @@ type Props
 
 mkHome :: Effect (React.ReactComponent Props)
 mkHome = do
-  Next.component "Home" getInitialProps \props -> React.do
-    pure $ render props
+  c <-
+    React.component "Home" \props -> React.do
+      pure $ render props
+  attachGetInitialProps getInitialProps c
   where
   render props =
     R.div_
