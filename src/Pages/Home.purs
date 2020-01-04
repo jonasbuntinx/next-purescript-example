@@ -1,8 +1,13 @@
 module Pages.Home (mkHome) where
 
 import Prelude
+import Data.Either (Either(..))
+import Data.Maybe (fromMaybe)
 import Effect (Effect)
+import Effect.Class (liftEffect)
+import Effect.Console as Console
 import Next.Components as N
+import Next.Data (Context(..))
 import Next.Hooks as Next
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
@@ -28,4 +33,8 @@ mkHome = do
       ]
 
   getInitialProps ctx = do
+    liftEffect
+      $ case ctx of
+          Left err -> Console.log err
+          Right (Context { pathname }) -> Console.log $ fromMaybe "no pathname" pathname
     pure $ { header: "Home" }
