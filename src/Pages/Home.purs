@@ -1,30 +1,23 @@
-module Pages.Home (home) where
+module Pages.Home (mkHome) where
 
 import Prelude
-import Data.Either (Either(..))
-import Data.Maybe (Maybe(..))
-import Effect.Aff (Aff)
-import Effect.Console (log)
-import Effect.Unsafe (unsafePerformEffect)
+import Effect (Effect)
 import Next.Components as N
-import Next.Data (Context(..))
-import Next.Utils as Next
-import React.Basic (Component, JSX, Self, createComponent, make)
+import Next.Hooks as Next
 import React.Basic.DOM as R
+import React.Basic.Hooks as React
 
 type Props
   = { header :: String }
 
-component :: Component Props
-component = createComponent "Home"
-
-home :: Props -> JSX
-home = Next.withInitialProps getInitialProps $ make component { initialState: unit, render }
+mkHome :: Effect (React.ReactComponent Props)
+mkHome = do
+  Next.component "Home" getInitialProps \props -> React.do
+    pure $ render props
   where
-  render :: forall state. Self Props state -> JSX
-  render self =
+  render props =
     R.div_
-      [ R.h1_ [ R.text self.props.header ]
+      [ R.h1_ [ R.text props.header ]
       , R.p_ [ R.text "Welcome to my Next.js with Purescript Example App!" ]
       , R.br {}
       , N.link
@@ -34,15 +27,5 @@ home = Next.withInitialProps getInitialProps $ make component { initialState: un
           }
       ]
 
-  getInitialProps :: Either String Context -> Aff Props
-  getInitialProps ctx = case ctx of
-    Right (Context { pathname: Just pathname }) -> do
-      let
-        _ = unsafePerformEffect $ log $ pathname
-      pure { header: "Home" }
-    Left e -> do
-      let
-        _ = unsafePerformEffect $ log $ e
-      pure { header: "Error" }
-    _ -> do
-      pure { header: "Error" }
+  getInitialProps ctx = do
+    pure $ { header: "Home" }

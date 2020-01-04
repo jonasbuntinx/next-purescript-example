@@ -11,7 +11,7 @@ You can edit this file as you like.
     , "foreign-generic"
     , "prelude"
     , "psci-support" 
-    , "react-basic"
+    , "react-basic-hooks"
     ]
 , packages = 
     ./packages.dhall
