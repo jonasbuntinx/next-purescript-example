@@ -15,11 +15,10 @@ type Props
   = { header :: String }
 
 mkHome :: Effect (React.ReactComponent Props)
-mkHome = do
-  c <-
-    React.component "Home" \props -> React.do
-      pure $ render props
-  attachGetInitialProps getInitialProps c
+mkHome =
+  attachGetInitialProps getInitialProps
+    =<< React.component "Home" \props -> React.do
+        pure $ render props
   where
   render props =
     R.div_
