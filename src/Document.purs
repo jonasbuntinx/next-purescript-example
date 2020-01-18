@@ -13,8 +13,7 @@ render self =
             []
           }
       , R.body
-          { className: "font-sans antialiased text-gray-100 leading-normal tracking-wider bg-cover"
-          , style: R.css { backgroundImage: "url('https://source.unsplash.com/qLW70Aoo8BE')" }
+          { className: "font-sans antialiased text-gray-100 leading-normal tracking-wider bg-gray-200"
           , children:
             [ N.main {}
             , N.nextScript {}

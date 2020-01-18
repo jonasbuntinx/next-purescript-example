@@ -41,9 +41,9 @@ mkHome =
               ]
           , R.li_
               [ N.link
-                  { href: "/contact"
+                  { href: "/profile"
                   , children:
-                    R.a { children: [ R.text "> contact" ] }
+                    R.a { children: [ R.text "> profile" ] }
                   }
               ]
           ]
