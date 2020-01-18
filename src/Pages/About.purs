@@ -16,9 +16,27 @@ mkAbout = do
       [ R.h1_ [ R.text "About" ]
       , R.p_ [ R.text "This is a simple example app using Next.js with Purescript." ]
       , R.br {}
-      , N.link
-          { href: "/home"
-          , children:
-            R.a { children: [ R.text "> home" ] }
-          }
+      , R.ul_
+          [ R.li_
+              [ N.link
+                  { href: "/home"
+                  , children:
+                    R.a { children: [ R.text "> home" ] }
+                  }
+              ]
+          , R.li_
+              [ N.link
+                  { href: "/about"
+                  , children:
+                    R.a { children: [ R.text "> about" ] }
+                  }
+              ]
+          , R.li_
+              [ N.link
+                  { href: "/contact"
+                  , children:
+                    R.a { children: [ R.text "> contact" ] }
+                  }
+              ]
+          ]
       ]

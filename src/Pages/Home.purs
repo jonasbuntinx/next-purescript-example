@@ -24,11 +24,29 @@ mkHome =
       [ R.h1_ [ R.text props.header ]
       , R.p_ [ R.text "Welcome to my Next.js with Purescript Example!" ]
       , R.br {}
-      , N.link
-          { href: "/about"
-          , children:
-            R.a { children: [ R.text "> about" ] }
-          }
+      , R.ul_
+          [ R.li_
+              [ N.link
+                  { href: "/home"
+                  , children:
+                    R.a { children: [ R.text "> home" ] }
+                  }
+              ]
+          , R.li_
+              [ N.link
+                  { href: "/about"
+                  , children:
+                    R.a { children: [ R.text "> about" ] }
+                  }
+              ]
+          , R.li_
+              [ N.link
+                  { href: "/contact"
+                  , children:
+                    R.a { children: [ R.text "> contact" ] }
+                  }
+              ]
+          ]
       ]
 
   getInitialProps ctx = do

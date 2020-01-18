@@ -32,7 +32,8 @@ head attrs = element headComponent attrs
 foreign import headComponent :: forall attrs. ReactComponent attrs
 
 type Props_main
-  = ( children :: Array JSX )
+  = ( children :: Array JSX
+    )
 
 main ::
   forall attrs attrs_.

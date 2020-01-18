@@ -12,9 +12,13 @@ render self =
           { children:
             []
           }
-      , R.body_
-          [ N.main {}
-          , N.nextScript {}
-          ]
+      , R.body
+          { className: "font-sans antialiased text-gray-100 leading-normal tracking-wider bg-cover"
+          , style: R.css { backgroundImage: "url('https://source.unsplash.com/qLW70Aoo8BE')" }
+          , children:
+            [ N.main {}
+            , N.nextScript {}
+            ]
+          }
       ]
     }
