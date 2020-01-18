@@ -3,8 +3,8 @@ module Next.Server where
 import Prelude
 import Control.Monad.Except (runExcept)
 import Control.Promise (Promise, fromAff)
-import Data.Bifunctor (lmap)
-import Data.Either (Either)
+import Data.Either (hush)
+import Data.Maybe (Maybe)
 import Data.Newtype (class Newtype, wrap)
 import Effect (Effect)
 import Effect.Aff (Aff)
@@ -30,13 +30,20 @@ instance decodeContext :: Decode Context where
 
 attachGetInitialProps ::
   forall props.
-  (Either String Context -> Aff { | props }) ->
+  (Maybe Context -> Aff { | props }) ->
   React.ReactComponent { | props } ->
   Effect (React.ReactComponent { | props })
 attachGetInitialProps getInitialProps =
   runEffectFn2
     unsafeSetGetInitialProps
-    (mkEffectFn1 $ fromAff <<< getInitialProps <<< lmap show <<< runExcept <<< decode)
+    ( mkEffectFn1
+        ( fromAff
+            <<< getInitialProps
+            <<< hush
+            <<< runExcept
+            <<< decode
+        )
+    )
 
 foreign import unsafeSetGetInitialProps ::
   forall props.

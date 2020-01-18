@@ -1,7 +1,7 @@
 module Pages.Home (mkHome) where
 
 import Prelude
-import Data.Either (Either(..))
+import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import Effect.Class (liftEffect)
 import Effect.Console as Console
@@ -34,6 +34,6 @@ mkHome =
   getInitialProps ctx = do
     liftEffect
       $ case ctx of
-          Left err -> Console.log err
-          Right (Context { pathname }) -> Console.log pathname
+          Nothing -> Console.log "Something went wrong"
+          Just (Context { pathname }) -> Console.log pathname
     pure $ { header: "Home" }
