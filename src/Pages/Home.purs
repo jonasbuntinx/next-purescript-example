@@ -2,12 +2,11 @@ module Pages.Home (mkHome) where
 
 import Prelude
 import Data.Either (Either(..))
-import Data.Maybe (fromMaybe)
 import Effect (Effect)
 import Effect.Class (liftEffect)
 import Effect.Console as Console
-import Next.Components as N
-import Next.Data (Context(..), attachGetInitialProps)
+import Next.Link (link) as N
+import Next.Server (Context(..), attachGetInitialProps)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
@@ -23,7 +22,7 @@ mkHome =
   render props =
     R.div_
       [ R.h1_ [ R.text props.header ]
-      , R.p_ [ R.text "Welcome to my Next.js with Purescript Example App!" ]
+      , R.p_ [ R.text "Welcome to my Next.js with Purescript Example!" ]
       , R.br {}
       , N.link
           { href: "/about"
@@ -36,5 +35,5 @@ mkHome =
     liftEffect
       $ case ctx of
           Left err -> Console.log err
-          Right (Context { pathname }) -> Console.log $ fromMaybe "no pathname" pathname
+          Right (Context { pathname }) -> Console.log pathname
     pure $ { header: "Home" }

@@ -1,7 +1,5 @@
 "use strict";
 
-exports.linkComponent = require('next/link').default;
-
 exports.htmlComponent = require('next/document').Html;
 
 exports.headComponent = require('next/document').Head;

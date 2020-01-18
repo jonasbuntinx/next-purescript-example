@@ -2,7 +2,7 @@ module Pages.About (mkAbout) where
 
 import Prelude
 import Effect (Effect)
-import Next.Components as N
+import Next.Link (link) as N
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 

@@ -1,6 +1,6 @@
-module Custom.Document (render) where
+module Document (render) where
 
-import Next.Components as N
+import Next.Document (html, head, main, nextScript) as N
 import React.Basic (JSX, Self)
 import React.Basic.DOM as R
 
