@@ -73,7 +73,7 @@ mkAbout = do
                 , children:
                   [ R.img
                       { className: "shadow-2xl"
-                      , src: "https://source.unsplash.com/QqLsprkkNbM"
+                      , src: "https://source.unsplash.com/rS1GogPLVHk"
                       }
                   ]
                 }

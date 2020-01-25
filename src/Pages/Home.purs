@@ -51,7 +51,7 @@ mkHome = do
                 , children:
                   [ R.img
                       { className: "shadow-2xl"
-                      , src: "https://source.unsplash.com/g6e641CiHFQ"
+                      , src: "https://source.unsplash.com/IuLgi9PWETU"
                       }
                   ]
                 }
