@@ -5,7 +5,7 @@ import Data.Maybe (Maybe(..))
 import Effect (Effect)
 import Effect.Class (liftEffect)
 import Effect.Console as Console
-import Next.Server (Context(..), attachGetInitialProps)
+import Next.Server (Context(..), withGetInitialProps)
 import Pages.Navigation (mkNavigation)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
@@ -16,7 +16,7 @@ type Props
 mkHome :: Effect (React.ReactComponent Props)
 mkHome = do
   navigation <- mkNavigation
-  attachGetInitialProps getInitialProps
+  withGetInitialProps getInitialProps
     =<< React.component "Home" \props -> React.do
         pure $ render { navigation } props
   where

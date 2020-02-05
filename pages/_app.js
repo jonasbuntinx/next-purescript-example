@@ -1,7 +1,4 @@
 import "../styles/styles.css";
+import { mkApp } from "../output/App/index.js";
 
-import React from "react";
-
-export default ({ Component, pageProps }) => {
-  return React.createElement(Component, pageProps);
-};
+export default mkApp();
