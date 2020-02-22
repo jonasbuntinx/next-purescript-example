@@ -8,6 +8,9 @@ This is a simple example app using [Next.js](https://github.com/zeit/next.js/) w
 # install dependencies
 $ yarn
 
+# build the example pages
+$ yarn build
+
 # serve with hot reload at localhost:3000
 $ yarn dev
 
