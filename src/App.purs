@@ -20,10 +20,10 @@ mkApp = do
     React.fragment
       [ N.head
           { children:
-            [ R.title
-                { children: [ R.text "Next.js with Purescript Example" ]
-                }
-            ]
+              [ R.title
+                  { children: [ R.text "Next.js with Purescript Example" ]
+                  }
+              ]
           }
       , React.element props."Component" props.pageProps
       ]

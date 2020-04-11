@@ -16,16 +16,16 @@ mkDocument = do
   render props =
     N.html
       { children:
-        [ N.head
-            { children:
-              []
-            }
-        , R.body
-            { className: "font-sans antialiased leading-normal tracking-wider bg-gray-200"
-            , children:
-              [ N.main {}
-              , N.nextScript {}
-              ]
-            }
-        ]
+          [ N.head
+              { children:
+                  []
+              }
+          , R.body
+              { className: "font-sans antialiased leading-normal tracking-wider bg-gray-200"
+              , children:
+                  [ N.main {}
+                  , N.nextScript {}
+                  ]
+              }
+          ]
       }
