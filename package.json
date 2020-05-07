@@ -16,7 +16,7 @@
     "next": "^9.3.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "tailwindcss": "^1.4.4"
+    "tailwindcss": "^1.4.5"
   },
   "devDependencies": {
     "pscid": "^2.9.0",
