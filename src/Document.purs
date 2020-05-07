@@ -2,18 +2,20 @@ module Document (mkDocument) where
 
 import Prelude
 import Effect (Effect)
+import Effect.Uncurried (runEffectFn1)
 import Next.Document (html, head, main, nextScript) as N
-import Next.Server (asDocument)
+import Next.Server (unsafeDocument) as N
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
 mkDocument :: Effect (React.ReactComponent {})
 mkDocument = do
-  asDocument
-    =<< React.component "Document" \props -> React.do
-        pure $ render props
+  c <-
+    React.reactComponent "Document" \_ -> React.do
+      pure render
+  runEffectFn1 N.unsafeDocument c
   where
-  render props =
+  render =
     N.html
       { children:
           [ N.head

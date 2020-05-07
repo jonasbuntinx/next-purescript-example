@@ -1,20 +1,19 @@
 module Pages.About (mkAbout) where
 
 import Prelude
-import Effect (Effect)
 import Pages.Navigation (mkNavigation)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
-mkAbout :: Effect (React.ReactComponent {})
+mkAbout :: React.Component Unit
 mkAbout = do
   navigation <- mkNavigation
-  React.component "About" \props -> React.do
-    pure $ render { navigation } props
+  React.component "About" \_ -> React.do
+    pure $ render { navigation }
   where
-  render slots _ =
+  render slots =
     React.fragment
-      [ React.element slots.navigation {}
+      [ slots.navigation unit
       , R.div
           { className: "max-w-5xl flex mx-auto my-12"
           , children:

@@ -1,21 +1,20 @@
 module Pages.Profile (mkProfile) where
 
 import Prelude
-import Effect (Effect)
 import Pages.Navigation (mkNavigation)
 import React.Basic.DOM as R
 import React.Basic.DOM.SVG as SVG
 import React.Basic.Hooks as React
 
-mkProfile :: Effect (React.ReactComponent {})
+mkProfile :: React.Component Unit
 mkProfile = do
   navigation <- mkNavigation
-  React.component "Profile" \props -> React.do
-    pure $ render { navigation } props
+  React.component "Profile" \_ -> React.do
+    pure $ render { navigation }
   where
-  render slots _ =
+  render slots =
     React.fragment
-      [ React.element slots.navigation {}
+      [ slots.navigation unit
       , R.div
           { className: "text-gray-100 max-w-2xl mx-auto my-24 shadow-2xl bg-gray-800 p-12 text-left"
           , children:

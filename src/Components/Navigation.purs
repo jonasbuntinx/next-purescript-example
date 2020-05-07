@@ -1,17 +1,16 @@
 module Pages.Navigation (mkNavigation) where
 
 import Prelude
-import Effect (Effect)
 import Next.Link (link) as N
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
-mkNavigation :: Effect (React.ReactComponent {})
+mkNavigation :: React.Component Unit
 mkNavigation =
-  React.component "Navigation" \props -> React.do
-    pure $ render props
+  React.component "Navigation" \_ -> React.do
+    pure render
   where
-  render props =
+  render =
     R.nav
       { className: "text-gray-800 w-full flex items-center justify-between py-3 px-4"
       , children:

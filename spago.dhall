@@ -2,21 +2,22 @@
 Welcome to a Spago project!
 You can edit this file as you like.
 -}
-{ name = 
+{ name =
     "next-purescript-example"
-, dependencies =    
+, dependencies =
     [ "aff-promise"
     , "console"
     , "effect"
     , "foreign-generic"
     , "prelude"
-    , "psci-support" 
+    , "psci-support"
     , "react-basic-hooks"
+    , "milkis"
     ]
-, packages = 
+, packages =
     ./packages.dhall
-, sources = 
+, sources =
     [ "src/**/*.purs"
-    , "test/**/*.purs" 
+    , "test/**/*.purs"
     ]
 }

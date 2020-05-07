@@ -1,11 +1,13 @@
-module Pages.Home (mkHome) where
+module Pages.Home (mkHome, getServerSideProps) where
 
 import Prelude
-import Data.Maybe (Maybe(..))
-import Effect (Effect)
+import Control.Promise (Promise, fromAff)
+import Effect.Aff (Aff)
 import Effect.Class (liftEffect)
 import Effect.Console as Console
-import Next.Server (Context(..), withGetInitialProps)
+import Effect.Uncurried (EffectFn1, mkEffectFn1)
+import Milkis as M
+import Milkis.Impl.Node (nodeFetch)
 import Pages.Navigation (mkNavigation)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
@@ -13,16 +15,15 @@ import React.Basic.Hooks as React
 type Props
   = { header :: String }
 
-mkHome :: Effect (React.ReactComponent Props)
+mkHome :: React.Component Props
 mkHome = do
   navigation <- mkNavigation
-  withGetInitialProps getInitialProps
-    =<< React.component "Home" \props -> React.do
-        pure $ render { navigation } props
+  React.component "Home" \props -> React.do
+    pure $ render { navigation } props
   where
   render slots props =
     React.fragment
-      [ React.element slots.navigation {}
+      [ slots.navigation unit
       , R.div
           { className: "max-w-5xl flex mx-auto my-12"
           , children:
@@ -59,9 +60,14 @@ mkHome = do
           }
       ]
 
-  getInitialProps ctx = do
-    liftEffect
-      $ case ctx of
-          Nothing -> Console.log "Something went wrong"
-          Just (Context { pathname }) -> Console.log pathname
-    pure $ { header: "Home" }
+fetchData :: forall ctx. ctx -> Aff Props
+fetchData _ = do
+  res <- M.text =<< M.fetch nodeFetch (M.URL "https://jsonplaceholder.typicode.com/posts/1") M.defaultFetchOptions
+  liftEffect $ Console.log res
+  pure $ { header: "Home" }
+
+getServerSideProps :: forall ctx. EffectFn1 ctx (Promise { props :: Props })
+getServerSideProps =
+  mkEffectFn1 $ fromAff
+    <<< map { props: _ }
+    <<< fetchData
