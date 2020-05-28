@@ -11,16 +11,16 @@
   "author": "Jonas Buntinx",
   "license": "MIT",
   "dependencies": {
-    "@next/bundle-analyzer": "^9.3.6",
+    "@next/bundle-analyzer": "^9.4.4",
     "cross-env": "^7.0.2",
-    "next": "^9.3.6",
+    "next": "^9.4.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "tailwindcss": "^1.4.5"
+    "tailwindcss": "^1.4.6"
   },
   "devDependencies": {
     "pscid": "^2.9.0",
-    "purescript": "^0.13.6",
+    "purescript": "^0.13.8",
     "purescript-psa": "^0.7.3",
     "purty": "^6.2.0",
     "spago": "^0.15.2"
