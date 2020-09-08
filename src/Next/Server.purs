@@ -7,9 +7,9 @@ import Effect.Uncurried (EffectFn1, EffectFn2, runEffectFn2)
 import React.Basic.Hooks as React
 
 -- | App
-type AppProps props
-  = { "Component" :: React.ReactComponent { | props }
-    , pageProps :: { | props }
+type AppProps pageProps props
+  = { "Component" :: React.ReactComponent props
+    , pageProps :: pageProps
     }
 
 -- | Document
@@ -25,7 +25,7 @@ type Enhancer props
 
 type DocumentContext r
   = { renderPage ::
-        { enhanceApp :: forall props. Enhancer (AppProps props)
+        { enhanceApp :: forall props pageProps. Enhancer (AppProps props pageProps)
         , enhanceComponent :: forall props. Enhancer props
         } ->
         RenderPageResult
