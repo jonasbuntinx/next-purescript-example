@@ -1,9 +1,4 @@
-{-
-Welcome to a Spago project!
-You can edit this file as you like.
--}
-{ name =
-    "next-purescript-example"
+{ name = "next-purescript-example"
 , dependencies =
     [ "aff-promise"
     , "console"
@@ -11,13 +6,10 @@ You can edit this file as you like.
     , "foreign-generic"
     , "prelude"
     , "psci-support"
+    , "react-basic-dom"
     , "react-basic-hooks"
     , "milkis"
     ]
-, packages =
-    ./packages.dhall
-, sources =
-    [ "src/**/*.purs"
-    , "test/**/*.purs"
-    ]
+, packages = ./packages.dhall
+, sources = [ "src/**/*.purs", "test/**/*.purs" ]
 }

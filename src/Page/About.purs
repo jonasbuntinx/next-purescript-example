@@ -1,7 +1,7 @@
-module Pages.About (mkAbout) where
+module Page.About (mkAbout) where
 
 import Prelude
-import Pages.Navigation (mkNavigation)
+import Component.Navigation (mkNavigation)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 

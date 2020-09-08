@@ -12,3 +12,4 @@
 /.cache/
 /.spago/
 /*.log
+/.parcel-cache

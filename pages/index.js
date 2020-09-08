@@ -1,4 +1,4 @@
-import { mkHome, getServerSideProps } from "../output/Pages.Home/index.js";
+import { mkHome, getServerSideProps } from "../output/Page.Home/index.js";
 
 export  { getServerSideProps };
 

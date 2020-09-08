@@ -10,31 +10,30 @@
   ],
   "author": "Jonas Buntinx",
   "license": "MIT",
-  "dependencies": {
-    "@next/bundle-analyzer": "^9.4.4",
-    "cross-env": "^7.0.2",
-    "next": "^9.4.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "tailwindcss": "^1.4.6"
+  "scripts": {
+    "analyze": "cross-env ANALYZE=true yarn build",
+    "build": "$(yarn bin)/spago build && $(yarn bin)/next build",
+    "clean": "rm -Rf .next .cache dist output",
+    "dev": "$(yarn bin)/spago build --watch & $(yarn bin)/next",
+    "id": "$(yarn bin)/pscid",
+    "pscid:build": "$(yarn bin)/spago build",
+    "postinstall": "$(yarn bin)/spago install",
+    "start": "yarn clean && yarn build && $(yarn bin)/next start",
+    "test": "$(yarn bin)/spago test"
   },
   "devDependencies": {
-    "pscid": "^2.9.0",
+    "pscid": "^2.9.3",
     "purescript": "^0.13.8",
     "purescript-psa": "^0.7.3",
     "purty": "^6.2.0",
-    "spago": "^0.15.2"
+    "spago": "^0.16.0"
   },
-  "scripts": {
-    "postinstall": "$(yarn bin)/spago install",
-    "clean": "rm -Rf .next .cache dist output",
-    "dev": "$(yarn bin)/spago build --watch & $(yarn bin)/next",
-    "pscid:build": "$(yarn bin)/spago build",
-    "build": "$(yarn bin)/spago build && $(yarn bin)/next build",
-    "rebuild": "yarn clean && yarn build",
-    "start": "yarn clean && yarn build && $(yarn bin)/next start",
-    "id": "$(yarn bin)/pscid",
-    "test": "$(yarn bin)/spago test",
-    "analyze": "cross-env ANALYZE=true yarn build"
+  "dependencies": {
+    "@next/bundle-analyzer": "^9.5.3",
+    "cross-env": "^7.0.2",
+    "next": "^9.5.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "tailwindcss": "^1.8.5"
   }
 }

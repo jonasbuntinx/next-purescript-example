@@ -1,7 +1,7 @@
-module Pages.Profile (mkProfile) where
+module Page.Profile (mkProfile) where
 
 import Prelude
-import Pages.Navigation (mkNavigation)
+import Component.Navigation (mkNavigation)
 import React.Basic.DOM as R
 import React.Basic.DOM.SVG as SVG
 import React.Basic.Hooks as React
