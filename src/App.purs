@@ -2,15 +2,11 @@ module App (mkApp) where
 
 import Prelude
 import Next.Head (head) as N
+import Next.Server (AppProps)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
-type Props r
-  = { "Component" :: React.ReactComponent { | r }
-    , pageProps :: { | r }
-    }
-
-mkApp :: forall r. React.Component (Props r)
+mkApp :: forall props. React.Component (AppProps props)
 mkApp = do
   React.component "App" \props -> React.do
     pure $ render props
