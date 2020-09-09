@@ -1,5 +1,8 @@
 module.exports = {
-  purge: false,
+  purge: {
+    mode: 'all',
+    content: ['./src/**/*.purs'],
+  },
   theme: {},
   variants: {},
   plugins: [],

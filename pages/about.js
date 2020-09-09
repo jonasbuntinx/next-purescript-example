@@ -1,3 +1,7 @@
-import { mkAbout } from "../output/Page.About/index.js";
+if (process.env.NODE_ENV == "production") {
+  var mkAbout = require("../dce-output/Website.Page.About/index.js").mkAbout;
+} else {
+  var mkAbout = require("../output/Website.Page.About/index.js").mkAbout;
+}
 
-export default mkAbout;
+exports.default = mkAbout;

@@ -12,9 +12,12 @@
   "license": "MIT",
   "scripts": {
     "analyze": "cross-env ANALYZE=true yarn build",
-    "build": "$(yarn bin)/spago build && $(yarn bin)/next build",
+    "build": "yarn build:spago && yarn build:dce && yarn build:next",
+    "build:spago": "$(yarn bin)/spago build --purs-args '--codegen corefn'",
+    "build:dce": "$(yarn bin)/zephyr -f Main",
+    "build:next": "$(yarn bin)/next build",
     "clean": "rm -Rf .next .cache dist output",
-    "dev": "$(yarn bin)/spago build --watch & $(yarn bin)/next",
+    "dev": "$(yarn bin)/spago build && ($(yarn bin)/spago build --watch & $(yarn bin)/next)",
     "id": "$(yarn bin)/pscid",
     "pscid:build": "$(yarn bin)/spago build",
     "postinstall": "$(yarn bin)/spago install",
@@ -26,7 +29,8 @@
     "purescript": "^0.13.8",
     "purescript-psa": "^0.7.3",
     "purty": "^6.2.0",
-    "spago": "^0.16.0"
+    "spago": "^0.16.0",
+    "zephyr": "https://github.com/jonasbuntinx/zephyr.git"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^9.5.3",

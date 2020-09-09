@@ -1,4 +1,4 @@
-module Component.Navigation (mkNavigation) where
+module Website.Component.Navigation (mkNavigation) where
 
 import Prelude
 import Next.Link (link) as N

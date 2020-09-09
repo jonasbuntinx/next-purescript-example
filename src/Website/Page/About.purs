@@ -1,16 +1,16 @@
-module Page.About (mkAbout) where
+module Website.Page.About (mkAbout) where
 
 import Prelude
-import Component.App as App
-import Component.Navigation (mkNavigation)
 import Effect.Class (liftEffect)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
+import Website.Component.Navigation (mkNavigation)
+import Website.Component.Website as Website
 
-mkAbout :: App.Component Unit
+mkAbout :: Website.Component Unit
 mkAbout = do
   navigation <- liftEffect mkNavigation
-  App.component "About" \_ _ -> React.do
+  Website.component "About" \_ _ -> React.do
     pure $ render { navigation }
   where
   render slots =

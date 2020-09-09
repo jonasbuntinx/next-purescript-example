@@ -1,4 +1,4 @@
-module Document where
+module Website.Document where
 
 import Prelude
 import Control.Promise (fromAff)

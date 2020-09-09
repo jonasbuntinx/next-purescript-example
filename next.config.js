@@ -3,7 +3,6 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 })
 
 module.exports = withBundleAnalyzer({
-  env: { API_ENDPOINT: "https://jsonplaceholder.typicode.com" },
   webpack(config, { dev, isServer }) {
     // Move Preact into the framework chunk instead of duplicating in routes:
     const splitChunks = config.optimization && config.optimization.splitChunks

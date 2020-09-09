@@ -1,16 +1,16 @@
-module Page.NotFound (mkNotFound) where
+module Website.Page.NotFound (mkNotFound) where
 
 import Prelude
-import Component.App as App
-import Component.Navigation (mkNavigation)
 import Effect.Class (liftEffect)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
+import Website.Component.Navigation (mkNavigation)
+import Website.Component.Website as Website
 
-mkNotFound :: App.Component Unit
+mkNotFound :: Website.Component Unit
 mkNotFound = do
   navigation <- liftEffect mkNavigation
-  App.component "NotFound" \_ _ -> React.do
+  Website.component "NotFound" \_ _ -> React.do
     pure $ render { navigation }
   where
   render slots =

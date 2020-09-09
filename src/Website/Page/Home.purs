@@ -1,9 +1,6 @@
-module Page.Home (mkHome, getServerSideProps) where
+module Website.Page.Home (Props, mkHome, getServerSideProps) where
 
 import Prelude
-import Component.App as App
-import Component.Navigation (mkNavigation)
-import Config as Config
 import Control.Promise (Promise, fromAff)
 import Data.Maybe (fromMaybe)
 import Effect.Aff (Aff)
@@ -14,15 +11,18 @@ import Milkis as M
 import Milkis.Impl.Node (nodeFetch)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
+import Website.Component.Navigation (mkNavigation)
+import Website.Component.Website as Website
+import Website.Config as Config
 
 type Props
   = { header :: String
     }
 
-mkHome :: App.Component Props
+mkHome :: Website.Component Props
 mkHome = do
   navigation <- liftEffect mkNavigation
-  App.component "Home" \env props -> React.do
+  Website.component "Home" \env props -> React.do
     settings <- React.useContext env.settings
     React.useEffect settings do
       Console.log $ fromMaybe "No settings" settings
