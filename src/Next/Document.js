@@ -1,20 +1,20 @@
 "use strict";
 
-exports.htmlComponent = require('next/document').Html;
+var document = require('next/document');
 
-exports.headComponent = require('next/document').Head;
+exports.htmlComponent = document.Html;
 
-exports.mainComponent = require('next/document').Main;
+exports.headComponent = document.Head;
 
-exports.nextScriptComponent = require('next/document').NextScript;
+exports.mainComponent = document.Main;
 
-var Document = require('next/document').default;
+exports.nextScriptComponent = document.NextScript;
 
 exports._unsafeDocument = function(getInitialProps, component) {
-  component.headTagsMiddleware = Document.headTagsMiddleware;
-  component.bodyTagsMiddleware = Document.bodyTagsMiddleware;
-  component.htmlPropsMiddleware = Document.htmlPropsMiddleware;
+  component.headTagsMiddleware = document.default.headTagsMiddleware;
+  component.bodyTagsMiddleware = document.default.bodyTagsMiddleware;
+  component.htmlPropsMiddleware = document.default.htmlPropsMiddleware;
   component.getInitialProps = getInitialProps;
-  component.renderDocument = Document.renderDocument;
+  component.renderDocument = document.default.renderDocument;
   return component;
 };
