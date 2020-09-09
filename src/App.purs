@@ -1,33 +1,20 @@
 module App (mkApp) where
 
 import Prelude
+import Component.App as App
 import Context.Settings (mkSettingsProvider)
-import Data.Maybe (Maybe)
-import Data.Symbol (SProxy(..))
+import Control.Monad.Reader (runReaderT)
 import Data.Tuple.Nested ((/\))
-import Next.Head (head) as N
-import Next.Server (AppProps)
-import Prim.Row (class Lacks)
-import React.Basic.DOM as R
+import Effect (Effect)
 import React.Basic.Hooks as React
-import Record as Record
 
-mkApp ::
-  forall props.
-  Lacks "context" props =>
-  React.Component (AppProps { | props } { context :: React.ReactContext (Maybe String) | props })
-mkApp = do
+type AppProps props
+  = { "Component" :: App.Component props
+    , pageProps :: props
+    }
+
+mkApp :: forall props. AppProps props -> Effect React.JSX
+mkApp props = do
   context /\ settingsProvider <- mkSettingsProvider
-  React.component "App" \props -> React.do
-    pure
-      $ settingsProvider
-      $ React.fragment
-          [ N.head
-              { children:
-                  [ R.title
-                      { children: [ R.text "Next.js with Purescript Example" ]
-                      }
-                  ]
-              }
-          , React.element props."Component" (Record.insert (SProxy :: _ "context") context props.pageProps)
-          ]
+  component <- runReaderT props."Component" { settings: context }
+  pure $ settingsProvider $ component props.pageProps

@@ -1,9 +1,9 @@
 module Page.Home (mkHome, getServerSideProps) where
 
 import Prelude
+import Component.App as App
 import Component.Navigation (mkNavigation)
 import Config as Config
-import Context.Settings as Settings
 import Control.Promise (Promise, fromAff)
 import Data.Maybe (fromMaybe)
 import Effect.Aff (Aff)
@@ -15,16 +15,15 @@ import Milkis.Impl.Node (nodeFetch)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
-type Props r
+type Props
   = { header :: String
-    | r
     }
 
-mkHome :: React.Component (Props ( context :: Settings.Context ))
+mkHome :: App.Component Props
 mkHome = do
-  navigation <- mkNavigation
-  React.component "Home" \props -> React.do
-    settings <- React.useContext props.context
+  navigation <- liftEffect mkNavigation
+  App.component "Home" \env props -> React.do
+    settings <- React.useContext env.settings
     React.useEffect settings do
       Console.log $ fromMaybe "No settings" settings
       mempty
@@ -69,13 +68,13 @@ mkHome = do
           }
       ]
 
-fetchData :: forall ctx. ctx -> Aff (Props ())
+fetchData :: forall ctx. ctx -> Aff Props
 fetchData _ = do
   res <- M.text =<< M.fetch nodeFetch (M.URL $ Config.apiEndpoint <> "/posts/1") M.defaultFetchOptions
   liftEffect $ Console.log res
   pure $ { header: "Home" }
 
-getServerSideProps :: forall ctx. EffectFn1 ctx (Promise { props :: Props () })
+getServerSideProps :: forall ctx. EffectFn1 ctx (Promise { props :: Props })
 getServerSideProps =
   mkEffectFn1 $ fromAff
     <<< map { props: _ }

@@ -1,14 +1,16 @@
 module Page.About (mkAbout) where
 
 import Prelude
+import Component.App as App
 import Component.Navigation (mkNavigation)
+import Effect.Class (liftEffect)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
-mkAbout :: React.Component Unit
+mkAbout :: App.Component Unit
 mkAbout = do
-  navigation <- mkNavigation
-  React.component "About" \_ -> React.do
+  navigation <- liftEffect mkNavigation
+  App.component "About" \_ _ -> React.do
     pure $ render { navigation }
   where
   render slots =

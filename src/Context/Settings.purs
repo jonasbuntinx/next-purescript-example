@@ -14,5 +14,5 @@ mkSettingsProvider = do
   context <- React.createContext Nothing
   component <-
     React.component "SettingsProvider " \content -> React.do
-      pure $ React.provider context (Just "Hello World") $ pure content
+      pure $ React.provider context (Just "Hello from Settings") $ pure content
   pure (context /\ component)
