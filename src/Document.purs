@@ -6,13 +6,11 @@ import Data.Nullable (null)
 import Effect (Effect)
 import Effect.Aff (Aff)
 import Effect.Uncurried (mkEffectFn1)
-import Next.Document (html, head, main, nextScript) as N
-import Next.Server (Document, DocumentContext, RenderPageResult, RenderPage)
-import Next.Server (unsafeDocument) as N
+import Next.Document as N
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
-mkDocument :: Effect Document
+mkDocument :: Effect N.Document
 mkDocument = do
   N.unsafeDocument getInitialProps =<< React.reactComponent "Document" \_ -> pure render
   where
@@ -36,10 +34,10 @@ mkDocument = do
           ]
       }
 
-getInitialProps :: forall r. RenderPage r
+getInitialProps :: forall r. N.RenderPage r
 getInitialProps = mkEffectFn1 (fromAff <<< transform)
   where
-  transform :: DocumentContext r -> Aff RenderPageResult
+  transform :: N.DocumentContext r -> Aff N.RenderPageResult
   transform { renderPage } = do
     pure
       $ renderPage
