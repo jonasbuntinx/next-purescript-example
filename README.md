@@ -6,14 +6,14 @@ This is a simple example app using [Next.js](https://github.com/zeit/next.js/) w
 
 ```yarn
 # install dependencies
-$ yarn
+$ npm install
 
 # build the example pages
-$ yarn build
+$ npm run build
 
 # serve with hot reload at localhost:3000
-$ yarn dev
+$ npm run dev
 
 # build for production and launch server
-$ yarn start
+$ npm run start
 ```
