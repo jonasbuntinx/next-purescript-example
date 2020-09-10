@@ -1,9 +1,5 @@
-if (process.env.NODE_ENV == "production") {
-  var home = require("../dce-output/Pages.Home/index.js");
-} else {
-  var home = require("../output/Pages.Home/index.js");
-}
+import { mkHome, getServerSideProps } from "../dce-output/Pages.Home/index.js";
 
-exports.getServerSideProps = home.getServerSideProps;
+export  { getServerSideProps };
 
-exports.default = home.mkHome;
+export default mkHome;
