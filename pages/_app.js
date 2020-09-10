@@ -6,4 +6,4 @@ if (process.env.NODE_ENV == "production") {
   var mkApp = require("../output/Pages.App/index.js").mkApp;
 }
 
-exports.default = function App (props) { return mkApp(props)(); };
+exports.default = mkApp;
