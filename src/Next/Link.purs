@@ -7,10 +7,11 @@ type Props_link
   = ( children :: JSX
     , href :: String
     , as :: String
+    , passHref :: Boolean
     , prefetch :: Boolean
     , replace :: Boolean
-    , passHref :: Boolean
     , scroll :: Boolean
+    , shallow :: Boolean
     )
 
 link ::
@@ -18,6 +19,6 @@ link ::
   Union attrs attrs_ Props_link =>
   Record attrs ->
   JSX
-link attrs = element linkComponent attrs
+link attrs = element _link attrs
 
-foreign import linkComponent :: forall attrs. ReactComponent attrs
+foreign import _link :: forall attrs. ReactComponent attrs

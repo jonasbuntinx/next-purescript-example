@@ -26,6 +26,7 @@ mkNavigation =
                       { children:
                           [ N.link
                               { href: "/"
+                              , passHref: true
                               , children:
                                   R.a
                                     { className: "inline-block py-2 px-4 font-bold"
@@ -38,6 +39,7 @@ mkNavigation =
                       { children:
                           [ N.link
                               { href: "/about"
+                              , passHref: true
                               , children:
                                   R.a
                                     { className: "inline-block py-2 px-4 font-bold"
@@ -50,6 +52,7 @@ mkNavigation =
                       { children:
                           [ N.link
                               { href: "/profile"
+                              , passHref: true
                               , children:
                                   R.a
                                     { className: "inline-block py-2 px-4 font-bold"

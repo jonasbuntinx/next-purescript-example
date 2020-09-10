@@ -1,14 +1,12 @@
-"use strict";
-
 var document = require('next/document');
 
-exports.htmlComponent = document.Html;
+exports._html = document.Html;
 
-exports.headComponent = document.Head;
+exports._head = document.Head;
 
-exports.mainComponent = document.Main;
+exports._main = document.Main;
 
-exports.nextScriptComponent = document.NextScript;
+exports._nextScript = document.NextScript;
 
 exports._unsafeDocument = function(getInitialProps, component) {
   component.headTagsMiddleware = document.default.headTagsMiddleware;
