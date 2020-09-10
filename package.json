@@ -20,6 +20,7 @@
     "dev": "spago build && (spago build --watch & next)",
     "id": "pscid",
     "pscid:build": "spago build",
+    "postbuild": "next-on-netlify",
     "postinstall": "spago install",
     "start": "yarn clean && yarn build && next start",
     "test": "spago test"
@@ -36,6 +37,7 @@
     "@next/bundle-analyzer": "^9.5.3",
     "cross-env": "^7.0.2",
     "next": "^9.5.3",
+    "next-on-netlify": "^2.4.0",
     "preact": "^10.4.8",
     "preact-render-to-string": "^5.1.10",
     "react": "github:preact-compat/react#1.0.0",
