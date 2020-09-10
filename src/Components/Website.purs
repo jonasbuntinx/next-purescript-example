@@ -1,11 +1,11 @@
-module Website.Component.Website where
+module Components.Website where
 
 import Prelude
 import Control.Monad.Reader (ReaderT, ask)
 import Effect (Effect)
 import Effect.Class (liftEffect)
+import Env (Env)
 import React.Basic.Hooks as React
-import Website.Env (Env)
 
 type Component props
   = ReaderT Env Effect (props -> React.JSX)

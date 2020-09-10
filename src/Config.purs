@@ -1,3 +1,3 @@
-module Website.Config where
+module Config where
 
 foreign import apiEndpoint :: String

@@ -1,11 +1,11 @@
-module Website.Page.About (mkAbout) where
+module Pages.About (mkAbout) where
 
 import Prelude
+import Components.Navigation (mkNavigation)
+import Components.Website as Website
 import Effect.Class (liftEffect)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
-import Website.Component.Navigation (mkNavigation)
-import Website.Component.Website as Website
 
 mkAbout :: Website.Component Unit
 mkAbout = do

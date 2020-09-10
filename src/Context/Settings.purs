@@ -1,4 +1,4 @@
-module Website.Context.Settings where
+module Context.Settings where
 
 import Prelude
 import Data.Maybe (Maybe(..))

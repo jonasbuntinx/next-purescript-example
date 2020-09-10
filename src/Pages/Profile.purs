@@ -1,12 +1,12 @@
-module Website.Page.Profile (mkProfile) where
+module Pages.Profile (mkProfile) where
 
 import Prelude
+import Components.Navigation (mkNavigation)
+import Components.Website as Website
 import Effect.Class (liftEffect)
 import React.Basic.DOM as R
 import React.Basic.DOM.SVG as SVG
 import React.Basic.Hooks as React
-import Website.Component.Navigation (mkNavigation)
-import Website.Component.Website as Website
 
 mkProfile :: Website.Component Unit
 mkProfile = do

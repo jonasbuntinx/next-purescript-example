@@ -13,16 +13,16 @@
   "scripts": {
     "analyze": "cross-env ANALYZE=true yarn build",
     "build": "yarn build:spago && yarn build:dce && yarn build:next",
-    "build:spago": "$(yarn bin)/spago build --purs-args '--codegen corefn'",
-    "build:dce": "$(yarn bin)/zephyr -f Main",
-    "build:next": "$(yarn bin)/next build",
+    "build:spago": "spago build --purs-args '--codegen corefn'",
+    "build:dce": "bash scripts/zephyr.sh './output/Pages.*'",
+    "build:next": "next build",
     "clean": "rm -Rf .next .cache dist output",
-    "dev": "$(yarn bin)/spago build && ($(yarn bin)/spago build --watch & $(yarn bin)/next)",
-    "id": "$(yarn bin)/pscid",
-    "pscid:build": "$(yarn bin)/spago build",
-    "postinstall": "$(yarn bin)/spago install",
-    "start": "yarn clean && yarn build && $(yarn bin)/next start",
-    "test": "$(yarn bin)/spago test"
+    "dev": "spago build && (spago build --watch & next)",
+    "id": "pscid",
+    "pscid:build": "spago build",
+    "postinstall": "spago install",
+    "start": "yarn clean && yarn build && next start",
+    "test": "spago test"
   },
   "devDependencies": {
     "pscid": "^2.9.3",

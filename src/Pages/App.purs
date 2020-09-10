@@ -1,12 +1,12 @@
-module Website.App (Props, mkApp) where
+module Pages.App (Props, mkApp) where
 
 import Prelude
+import Components.Website as Website
+import Context.Settings (mkSettingsProvider)
 import Control.Monad.Reader (runReaderT)
 import Data.Tuple.Nested ((/\))
 import Effect (Effect)
 import React.Basic.Hooks as React
-import Website.Component.Website as Website
-import Website.Context.Settings (mkSettingsProvider)
 
 type Props props
   = { "Component" :: Website.Component props

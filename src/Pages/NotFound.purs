@@ -1,11 +1,11 @@
-module Website.Page.NotFound (mkNotFound) where
+module Pages.NotFound (mkNotFound) where
 
 import Prelude
+import Components.Navigation (mkNavigation)
+import Components.Website as Website
 import Effect.Class (liftEffect)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
-import Website.Component.Navigation (mkNavigation)
-import Website.Component.Website as Website
 
 mkNotFound :: Website.Component Unit
 mkNotFound = do

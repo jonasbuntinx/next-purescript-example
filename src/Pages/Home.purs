@@ -1,6 +1,9 @@
-module Website.Page.Home (Props, mkHome, getServerSideProps) where
+module Pages.Home (Props, mkHome, getServerSideProps) where
 
 import Prelude
+import Components.Navigation (mkNavigation)
+import Components.Website as Website
+import Config as Config
 import Control.Promise (Promise, fromAff)
 import Data.Maybe (fromMaybe)
 import Effect.Aff (Aff)
@@ -11,9 +14,6 @@ import Milkis as M
 import Milkis.Impl.Node (nodeFetch)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
-import Website.Component.Navigation (mkNavigation)
-import Website.Component.Website as Website
-import Website.Config as Config
 
 type Props
   = { header :: String
