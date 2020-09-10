@@ -1,17 +1,17 @@
 module Pages.Profile (mkProfile) where
 
 import Prelude
+import Components.App as App
 import Components.Navigation (mkNavigation)
-import Components.Website as Website
 import Effect.Class (liftEffect)
 import React.Basic.DOM as R
 import React.Basic.DOM.SVG as SVG
 import React.Basic.Hooks as React
 
-mkProfile :: Website.Component Unit
+mkProfile :: App.Component Unit
 mkProfile = do
   navigation <- liftEffect mkNavigation
-  Website.component "Profile" \_ _ -> React.do
+  App.component "Profile" \_ _ -> React.do
     pure $ render { navigation }
   where
   render slots =

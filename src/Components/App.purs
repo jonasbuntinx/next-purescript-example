@@ -1,4 +1,4 @@
-module Components.Website where
+module Components.App where
 
 import Prelude
 import Control.Monad.Reader (ReaderT, ask)

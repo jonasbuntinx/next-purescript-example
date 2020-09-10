@@ -1,7 +1,7 @@
 module Pages.App (Props, mkApp) where
 
 import Prelude
-import Components.Website as Website
+import Components.App as App
 import Context.Settings (mkSettingsProvider)
 import Control.Monad.Reader (runReaderT)
 import Data.Tuple.Nested ((/\))
@@ -9,7 +9,7 @@ import Effect (Effect)
 import React.Basic.Hooks as React
 
 type Props props
-  = { "Component" :: Website.Component props
+  = { "Component" :: App.Component props
     , pageProps :: props
     }
 

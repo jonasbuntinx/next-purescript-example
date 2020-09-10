@@ -1,8 +1,8 @@
 module Pages.Home (Props, mkHome, getServerSideProps) where
 
 import Prelude
+import Components.App as App
 import Components.Navigation (mkNavigation)
-import Components.Website as Website
 import Config as Config
 import Control.Promise (Promise, fromAff)
 import Data.Maybe (fromMaybe)
@@ -19,10 +19,10 @@ type Props
   = { header :: String
     }
 
-mkHome :: Website.Component Props
+mkHome :: App.Component Props
 mkHome = do
   navigation <- liftEffect mkNavigation
-  Website.component "Home" \env props -> React.do
+  App.component "Home" \env props -> React.do
     settings <- React.useContext env.settings
     React.useEffect settings do
       Console.log $ fromMaybe "No settings" settings
