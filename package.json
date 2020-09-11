@@ -19,6 +19,7 @@
     "clean": "rm -Rf .cache .next output dce-output out_functions out_publish node_modules .spago *-lock.json",
     "dev": "spago build && (spago build --watch & next)",
     "id": "pscid",
+    "netlify": "netlify dev",
     "pscid:build": "spago build",
     "postbuild": "next-on-netlify",
     "postinstall": "spago install",
@@ -26,7 +27,7 @@
     "test": "spago test"
   },
   "devDependencies": {
-    "netlify-cli": "^2.61.2",
+    "netlify-cli": "^2.62.0",
     "pscid": "^2.9.3",
     "purescript": "^0.13.8",
     "purescript-psa": "^0.7.3",
@@ -38,12 +39,12 @@
     "@next/bundle-analyzer": "^9.5.3",
     "cross-env": "^7.0.2",
     "next": "^9.5.3",
-    "next-on-netlify": "^2.4.0",
+    "next-on-netlify": "https://github.com/jonasbuntinx/next-on-netlify.git",
     "preact": "^10.4.8",
     "preact-render-to-string": "^5.1.10",
     "react": "github:preact-compat/react#1.0.0",
     "react-dom": "github:preact-compat/react-dom#1.0.0",
     "react-ssr-prepass": "npm:preact-ssr-prepass@1.1.1",
-    "tailwindcss": "^1.8.5"
+    "tailwindcss": "^1.8.7"
   }
 }
