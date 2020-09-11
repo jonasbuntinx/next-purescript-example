@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-FILES=$@
+FILES="./corefn/Pages.*"
 
 declare -a PAGES
 
@@ -9,4 +9,4 @@ do
   PAGES=(${PAGES[@]} $(basename $f))
 done
 
-zephyr -f ${PAGES[*]}
+zephyr -f -i "corefn" -o "output" ${PAGES[*]}

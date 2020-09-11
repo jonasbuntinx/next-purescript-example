@@ -1,3 +1,3 @@
-import { mkNotFound } from "../dce-output/Pages.NotFound/index.js";
+import { mkNotFound } from "../output/Pages.NotFound/index.js";
 
 export default mkNotFound;

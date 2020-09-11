@@ -2,7 +2,7 @@
 /node_modules/
 /.pulp-cache/
 /output/
-/dce-output/
+/corefn/
 /generated-docs/
 /.psc-package/
 /.psc*
