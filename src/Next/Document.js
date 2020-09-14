@@ -1,4 +1,4 @@
-var document = require('next/document');
+var document = require("next/document");
 
 exports._html = document.Html;
 
@@ -8,11 +8,9 @@ exports._main = document.Main;
 
 exports._nextScript = document.NextScript;
 
-exports._unsafeDocument = function(getInitialProps, component) {
+exports._unsafeDocument = function(component) {
   component.headTagsMiddleware = document.default.headTagsMiddleware;
-  component.bodyTagsMiddleware = document.default.bodyTagsMiddleware;
-  component.htmlPropsMiddleware = document.default.htmlPropsMiddleware;
-  component.getInitialProps = getInitialProps;
+  component.getInitialProps = document.default.getInitialProps;
   component.renderDocument = document.default.renderDocument;
   return component;
 };

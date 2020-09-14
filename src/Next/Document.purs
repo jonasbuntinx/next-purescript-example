@@ -1,12 +1,9 @@
 module Next.Document where
 
-import Control.Promise (Promise)
-import Data.Nullable (Nullable)
 import Effect (Effect)
-import Effect.Uncurried (EffectFn1, EffectFn2, runEffectFn2)
+import Effect.Uncurried (EffectFn1, runEffectFn1)
 import Prim.Row (class Union)
-import React.Basic (JSX, ReactComponent, element)
-import React.Basic as React
+import React.Basic.Hooks (JSX, ReactComponent, element)
 
 -- | Components
 type Props_html
@@ -66,38 +63,10 @@ nextScript attrs = element _nextScript attrs
 foreign import _nextScript :: forall attrs. ReactComponent attrs
 
 -- | Document
-type DocumentComponent
-  = React.ReactComponent DocumentProps
-
-type DocumentProps
-  = { isDevelopment :: Boolean
-    }
-
-type Enhancer props
-  = Nullable ((props -> React.JSX) -> (props -> React.JSX))
-
-type DocumentContext r
-  = { renderPage ::
-        { enhanceApp :: forall props. Enhancer props
-        , enhanceComponent :: forall props. Enhancer props
-        } ->
-        RenderPageResult
-    | r
-    }
-
-type RenderPageResult
-  = { html :: String, head :: Array React.JSX }
-
-type RenderPage r
-  = EffectFn1 (DocumentContext r) (Promise RenderPageResult)
-
 unsafeDocument ::
-  forall r.
-  RenderPage r ->
-  DocumentComponent ->
-  Effect Document
-unsafeDocument = runEffectFn2 _unsafeDocument
+  forall props.
+  ReactComponent { | props } ->
+  Effect (ReactComponent { | props })
+unsafeDocument = runEffectFn1 _unsafeDocument
 
-foreign import data Document :: Type
-
-foreign import _unsafeDocument :: forall r. EffectFn2 (RenderPage r) DocumentComponent Document
+foreign import _unsafeDocument :: forall props. EffectFn1 (ReactComponent props) (ReactComponent props)

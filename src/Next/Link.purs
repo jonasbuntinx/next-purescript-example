@@ -1,7 +1,7 @@
 module Next.Link where
 
 import Prim.Row (class Union)
-import React.Basic (JSX, ReactComponent, element)
+import React.Basic.Hooks (JSX, ReactComponent, element)
 
 type Props_link
   = ( children :: JSX

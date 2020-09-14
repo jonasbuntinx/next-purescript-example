@@ -1,1 +1,1 @@
-exports._head = require('next/head').default;
+exports._head = require("next/head").default;

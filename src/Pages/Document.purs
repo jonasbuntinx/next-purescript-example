@@ -1,18 +1,14 @@
 module Pages.Document where
 
 import Prelude
-import Control.Promise (fromAff)
-import Data.Nullable (null)
 import Effect (Effect)
-import Effect.Aff (Aff)
-import Effect.Uncurried (mkEffectFn1)
 import Next.Document as N
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
-mkDocument :: Effect N.Document
+mkDocument :: Effect (React.ReactComponent {})
 mkDocument = do
-  N.unsafeDocument getInitialProps =<< React.reactComponent "Document" \_ -> pure render
+  N.unsafeDocument =<< React.reactComponent "Document" \_ -> pure render
   where
   render =
     N.html
@@ -27,14 +23,3 @@ mkDocument = do
               }
           ]
       }
-
-getInitialProps :: forall r. N.RenderPage r
-getInitialProps = mkEffectFn1 (fromAff <<< transform)
-  where
-  transform :: N.DocumentContext r -> Aff N.RenderPageResult
-  transform { renderPage } = do
-    pure
-      $ renderPage
-          { enhanceApp: null
-          , enhanceComponent: null
-          }
