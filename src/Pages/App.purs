@@ -6,6 +6,8 @@ import Context.Settings (mkSettingsProvider)
 import Control.Monad.Reader (runReaderT)
 import Data.Tuple.Nested ((/\))
 import Effect.Uncurried (EffectFn1, mkEffectFn1)
+import Next.Head as N
+import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
 type Props props
@@ -18,4 +20,15 @@ mkApp =
   mkEffectFn1 \props -> do
     context /\ settingsProvider <- mkSettingsProvider
     component <- runReaderT props."Component" { settings: context }
-    pure $ settingsProvider $ component props.pageProps
+    pure
+      $ settingsProvider
+      $ React.fragment
+          [ N.head
+              { children:
+                  [ R.title
+                      { children: [ R.text "Next.js with Purescript Example" ]
+                      }
+                  ]
+              }
+          , component props.pageProps
+          ]

@@ -12,6 +12,6 @@ head ::
   Union attrs attrs_ Props_head =>
   Record attrs ->
   JSX
-head attrs = element headComponent attrs
+head attrs = element _head attrs
 
-foreign import headComponent :: forall attrs. ReactComponent attrs
+foreign import _head :: forall attrs. ReactComponent attrs

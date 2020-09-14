@@ -17,13 +17,7 @@ mkDocument = do
   render =
     N.html
       { children:
-          [ N.head
-              { children:
-                  [ R.title
-                      { children: [ R.text "Next.js with Purescript Example" ]
-                      }
-                  ]
-              }
+          [ N.head { children: [] }
           , R.body
               { className: "font-sans antialiased leading-normal tracking-wider bg-gray-200"
               , children:
