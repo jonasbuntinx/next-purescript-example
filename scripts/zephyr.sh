@@ -9,4 +9,4 @@ do
   PAGES=(${PAGES[@]} $(basename $f))
 done
 
-zephyr -f -i "corefn" -o "output" ${PAGES[*]}
+zephyr -f -i "corefn" -o "build" ${PAGES[*]}

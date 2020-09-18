@@ -1,3 +1,3 @@
-import { mkDocument } from "../output/Pages.Document/index.js";
+import { mkDocument } from "../build/Pages.Document/index.js";
 
 export default mkDocument();

@@ -14,5 +14,6 @@
 /.spago/
 /*.log
 /.parcel-cache
+/build/
 /out_publish/
 /out_functions/
