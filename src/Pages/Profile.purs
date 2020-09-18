@@ -2,22 +2,17 @@ module Pages.Profile (mkProfile) where
 
 import Prelude
 import Components.App as App
-import Components.Navigation (mkNavigation)
-import Effect.Class (liftEffect)
 import React.Basic.DOM as R
 import React.Basic.DOM.SVG as SVG
 import React.Basic.Hooks as React
 
 mkProfile :: App.Component Unit
 mkProfile = do
-  navigation <- liftEffect mkNavigation
-  App.component "Profile" \_ _ -> React.do
-    pure $ render { navigation }
+  App.component "Profile" \_ _ -> pure render
   where
-  render slots =
+  render =
     React.fragment
-      [ slots.navigation unit
-      , R.div
+      [ R.div
           { className: "text-gray-100 max-w-2xl mx-auto my-24 shadow-2xl bg-gray-800 p-12 text-left"
           , children:
               [ R.div

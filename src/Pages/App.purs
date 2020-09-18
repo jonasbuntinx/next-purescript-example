@@ -2,6 +2,8 @@ module Pages.App (Props, mkApp) where
 
 import Prelude
 import Components.App as App
+import Components.Loading (mkLoading)
+import Components.Navigation (navigation)
 import Context.Settings (mkSettingsProvider)
 import Control.Monad.Reader (runReaderT)
 import Data.Tuple.Nested ((/\))
@@ -19,6 +21,7 @@ mkApp :: forall props. EffectFn1 (Props props) React.JSX
 mkApp =
   mkEffectFn1 \props -> do
     context /\ settingsProvider <- mkSettingsProvider
+    loading <- mkLoading
     component <- runReaderT props."Component" { settings: context }
     pure
       $ settingsProvider
@@ -30,5 +33,7 @@ mkApp =
                       }
                   ]
               }
+          , loading unit
+          , navigation
           , component props.pageProps
           ]

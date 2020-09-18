@@ -2,21 +2,16 @@ module Pages.About (mkAbout) where
 
 import Prelude
 import Components.App as App
-import Components.Navigation (mkNavigation)
-import Effect.Class (liftEffect)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
 mkAbout :: App.Component Unit
 mkAbout = do
-  navigation <- liftEffect mkNavigation
-  App.component "About" \_ _ -> React.do
-    pure $ render { navigation }
+  App.component "About" \_ _ -> pure render
   where
-  render slots =
+  render =
     React.fragment
-      [ slots.navigation unit
-      , R.div
+      [ R.div
           { className: "max-w-5xl flex mx-auto my-12"
           , children:
               [ R.div

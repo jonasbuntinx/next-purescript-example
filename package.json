@@ -27,9 +27,10 @@
     "pscid:build": "spago build",
     "postbundle": "next-on-netlify",
     "postinstall": "spago install",
-    "start": "yarn start:clean && yarn start:build && yarn start:serve",
+    "start": "yarn start:clean && yarn start:spago && yarn start:next && yarn start:serve",
     "start:clean": "rm -Rf build",
-    "start:build": "spago build --purs-args '--output build'",
+    "start:spago": "spago build --purs-args '--output build'",
+    "start:next": "next build",
     "start:serve": "next start",
     "test": "spago test"
   },

@@ -2,7 +2,6 @@ module Pages.Home (Props, mkHome, getServerSideProps) where
 
 import Prelude
 import Components.App as App
-import Components.Navigation (mkNavigation)
 import Config as Config
 import Control.Promise (Promise, fromAff)
 import Data.Maybe (fromMaybe)
@@ -21,18 +20,16 @@ type Props
 
 mkHome :: App.Component Props
 mkHome = do
-  navigation <- liftEffect mkNavigation
   App.component "Home" \env props -> React.do
     settings <- React.useContext env.settings
     React.useEffect settings do
       Console.log $ fromMaybe "No settings" settings
       mempty
-    pure $ render { navigation } props
+    pure $ render props
   where
-  render slots props =
+  render props =
     React.fragment
-      [ slots.navigation unit
-      , R.div
+      [ R.div
           { className: "max-w-5xl flex mx-auto my-12"
           , children:
               [ R.div

@@ -1,7 +1,6 @@
 module Next.Document where
 
 import Effect (Effect)
-import Effect.Uncurried (EffectFn1, runEffectFn1)
 import Prim.Row (class Union)
 import React.Basic.Hooks (JSX, ReactComponent, element)
 
@@ -63,10 +62,4 @@ nextScript attrs = element _nextScript attrs
 foreign import _nextScript :: forall attrs. ReactComponent attrs
 
 -- | Document
-unsafeDocument ::
-  forall props.
-  ReactComponent { | props } ->
-  Effect (ReactComponent { | props })
-unsafeDocument = runEffectFn1 _unsafeDocument
-
-foreign import _unsafeDocument :: forall props. EffectFn1 (ReactComponent props) (ReactComponent props)
+foreign import unsafeDocument :: forall props. ReactComponent props -> Effect (ReactComponent props)
