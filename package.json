@@ -18,7 +18,7 @@
     "bundle:spago": "spago build --purs-args '--output corefn --codegen corefn'",
     "bundle:dce": "bash scripts/zephyr.sh",
     "bundle:next": "next build",
-    "clean": "rm -Rf .cache .next output build corefn out_functions out_publish node_modules .spago *-lock.json",
+    "clean": "rm -Rf .cache .next output build corefn out_functions out_publish node_modules .spago *.lock",
     "dev": "yarn dev:clean && yarn dev:build && yarn dev:serve",
     "dev:clean": "rm -Rf build",
     "dev:build": "spago build --purs-args '--output build'",
