@@ -1,16 +1,18 @@
 module Pages.Home (Props, mkHome, getServerSideProps) where
 
 import Prelude
+import Affjax as AX
+import Affjax.ResponseFormat as ResponseFormat
 import Components.App as App
 import Config as Config
 import Control.Promise (Promise, fromAff)
+import Data.Either (Either(..), either)
+import Data.HTTP.Method (Method(..))
 import Data.Maybe (fromMaybe)
 import Effect.Aff (Aff)
 import Effect.Class (liftEffect)
 import Effect.Console as Console
 import Effect.Uncurried (EffectFn1, mkEffectFn1)
-import Milkis as M
-import Milkis.Impl.Node (nodeFetch)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
@@ -67,8 +69,8 @@ mkHome = do
 
 fetchData :: forall ctx. ctx -> Aff Props
 fetchData _ = do
-  res <- M.text =<< M.fetch nodeFetch (M.URL $ Config.apiEndpoint <> "/posts/1") M.defaultFetchOptions
-  liftEffect $ Console.log res
+  res <- AX.request (AX.defaultRequest { url = Config.apiEndpoint <> "/posts/1", method = Left GET, responseFormat = ResponseFormat.string })
+  liftEffect $ Console.log $ either AX.printError _.body res
   pure $ { header: "Home" }
 
 getServerSideProps :: forall ctx. EffectFn1 ctx (Promise { props :: Props })

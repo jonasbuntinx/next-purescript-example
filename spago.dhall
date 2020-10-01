@@ -1,6 +1,7 @@
 { name = "next-purescript-example"
 , dependencies =
     [ "aff-promise"
+    , "affjax"
     , "console"
     , "effect"
     , "foreign-generic"
@@ -8,7 +9,6 @@
     , "psci-support"
     , "react-basic-dom"
     , "react-basic-hooks"
-    , "milkis"
     ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs", "test/**/*.purs" ]

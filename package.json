@@ -40,6 +40,7 @@
     "purescript-psa": "^0.7.3",
     "purty": "^6.2.0",
     "spago": "^0.16.0",
+    "string-replace-loader": "^2.3.0",
     "zephyr": "https://github.com/jonasbuntinx/zephyr.git"
   },
   "dependencies": {
@@ -52,6 +53,7 @@
     "react": "github:preact-compat/react#1.0.0",
     "react-dom": "github:preact-compat/react-dom#1.0.0",
     "react-ssr-prepass": "npm:preact-ssr-prepass@1.1.1",
-    "tailwindcss": "^1.8.10"
+    "tailwindcss": "^1.8.10",
+    "xhr2": "^0.2.0"
   }
 }

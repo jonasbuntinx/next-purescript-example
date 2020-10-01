@@ -38,6 +38,20 @@ module.exports = withBundleAnalyzer({
         })
     }
 
+    // https://github.com/purescript-contrib/purescript-affjax/issues/63
+    if (isServer) {
+      config.module.rules.push(
+        {
+          test: /build\/Affjax\/foreign\.js$/,
+          loader: 'string-replace-loader',
+          options: {
+            search: 'module.require',
+            replace: '__webpack_require__'
+          }
+        }
+      )
+    }
+
     return config
   }
 })
