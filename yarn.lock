@@ -4338,9 +4338,10 @@ next-aws-lambda@^2.5.0:
   resolved "https://registry.yarnpkg.com/next-aws-lambda/-/next-aws-lambda-2.5.0.tgz#66067ca3a59524e87579cfc5c19cad17eba1329e"
   integrity sha512-TKI0e+RFOuevQnkliE73VCzx9VRF8qpXuL18uxOJvPhCe09pxLwfaDQMuNKf3b2d9PS/Ajn+Y/O41bBuJMu4aA==
 
-"next-on-netlify@https://github.com/jonasbuntinx/next-on-netlify.git":
-  version "2.4.0"
-  resolved "https://github.com/jonasbuntinx/next-on-netlify.git#6ca545f875c2b44c85a66285499465bd68d15d01"
+next-on-netlify@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/next-on-netlify/-/next-on-netlify-2.5.1.tgz#19d6b8e21be670b5a0a89f8abb0f31ffd605972e"
+  integrity sha512-TwQTy7xNg0CTfnVE4B6oRu2+6ci0kSsW9sD16uzBIKXjLY3YalutMrQgYyL/WsKA0YXQF7VS2aVwN0E70cO76g==
   dependencies:
     "@sls-next/lambda-at-edge" "^1.5.2"
     commander "^6.0.0"
@@ -5008,10 +5009,10 @@ preact-render-to-string@^5.1.10:
   dependencies:
     pretty-format "^3.8.0"
 
-preact@^10.4.8:
-  version "10.4.8"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-10.4.8.tgz#8517b106cc5591eb675237c93da99ac052cf4756"
-  integrity sha512-uVLeEAyRsCkUEFhVHlOu17OxcrwC7+hTGZ08kBoLBiGHiZooUZuibQnphgMKftw/rqYntNMyhVCPqQhcyAGHag==
+preact@^10.5.3:
+  version "10.5.3"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.3.tgz#c19d509f60e6adca5da8efd421706b3d0a1fb636"
+  integrity sha512-g9i3d4obUJ24idLW/wuKWATVj6YFjxXDN+POu4u68YrI5dypUOu9Z3lb8/M4kr2dojcwq3H1GSgfpQkFX7y5Zw==
 
 pretty-format@^3.8.0:
   version "3.8.0"
@@ -5153,10 +5154,10 @@ purescript-installer@^0.2.0:
     which "^1.3.1"
     zen-observable "^0.8.14"
 
-purescript-psa@^0.7.3:
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/purescript-psa/-/purescript-psa-0.7.3.tgz#0e1ff29cbd6a0fe2429717e7147d0c1cbd4760a9"
-  integrity sha512-qcnhruybTHVunhJqAuurOEWnz1BOOc/7mpcnyH5yxm5caYCejxq8GOE4ZNWbiPMeTlcG79qUPIOz7gx5OVmk2Q==
+purescript-psa@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/purescript-psa/-/purescript-psa-0.8.0.tgz#a1abf0bd8f8a3a30c0435640dc9fa3609b8c33d6"
+  integrity sha512-N76JjHcBbJMf4/rs8dnCniFi7TL9iBbV0BycXuwEtSYnmiaogng0tFmnliqubQyZ5FpDU9ET8Bq1NjH3Hmx5PA==
 
 purescript@^0.13.8:
   version "0.13.8"
