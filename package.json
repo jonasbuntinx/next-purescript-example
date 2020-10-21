@@ -44,16 +44,16 @@
     "zephyr": "https://github.com/jonasbuntinx/zephyr.git"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^9.5.3",
+    "@next/bundle-analyzer": "^9.5.5",
     "cross-env": "^7.0.2",
-    "next": "^9.5.3",
+    "next": "^9.5.5",
     "next-on-netlify": "^2.5.1",
-    "preact": "^10.5.3",
+    "preact": "^10.5.5",
     "preact-render-to-string": "^5.1.10",
     "react": "github:preact-compat/react#1.0.0",
     "react-dom": "github:preact-compat/react-dom#1.0.0",
-    "react-ssr-prepass": "npm:preact-ssr-prepass@1.1.1",
-    "tailwindcss": "^1.8.10",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@1.1.2",
+    "tailwindcss": "^1.9.5",
     "xhr2": "^0.2.0"
   }
 }
