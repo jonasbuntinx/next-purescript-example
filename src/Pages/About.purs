@@ -1,13 +1,13 @@
 module Pages.About (mkAbout) where
 
 import Prelude
-import Components.App as App
+import Components.Page as Page
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
-mkAbout :: App.Component Unit
+mkAbout :: Page.Component Unit
 mkAbout = do
-  App.component "About" \_ _ -> pure render
+  Page.component "About" \_ _ -> pure render
   where
   render =
     React.fragment

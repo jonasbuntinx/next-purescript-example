@@ -1,14 +1,14 @@
 module Pages.Profile (mkProfile) where
 
 import Prelude
-import Components.App as App
+import Components.Page as Page
 import React.Basic.DOM as R
 import React.Basic.DOM.SVG as SVG
 import React.Basic.Hooks as React
 
-mkProfile :: App.Component Unit
+mkProfile :: Page.Component Unit
 mkProfile = do
-  App.component "Profile" \_ _ -> pure render
+  Page.component "Profile" \_ _ -> pure render
   where
   render =
     React.fragment

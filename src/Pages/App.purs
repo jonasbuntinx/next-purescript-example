@@ -1,9 +1,9 @@
 module Pages.App (Props, mkApp) where
 
 import Prelude
-import Components.App as App
 import Components.Loading (mkLoading)
 import Components.Navigation (navigation)
+import Components.Page as Page
 import Context.Settings (mkSettingsProvider)
 import Control.Monad.Reader (runReaderT)
 import Data.Tuple.Nested ((/\))
@@ -13,7 +13,7 @@ import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
 type Props props
-  = { "Component" :: App.Component props
+  = { "Component" :: Page.Component props
     , pageProps :: props
     }
 

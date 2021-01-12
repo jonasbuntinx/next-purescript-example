@@ -3,7 +3,7 @@ module Pages.Home (Props, mkHome, getServerSideProps) where
 import Prelude
 import Affjax as AX
 import Affjax.ResponseFormat as ResponseFormat
-import Components.App as App
+import Components.Page as Page
 import Config as Config
 import Control.Promise (Promise, fromAff)
 import Data.Either (Either(..), either)
@@ -20,9 +20,9 @@ type Props
   = { header :: String
     }
 
-mkHome :: App.Component Props
+mkHome :: Page.Component Props
 mkHome = do
-  App.component "Home" \env props -> React.do
+  Page.component "Home" \env props -> React.do
     settings <- React.useContext env.settings
     React.useEffect settings do
       Console.log $ fromMaybe "No settings" settings

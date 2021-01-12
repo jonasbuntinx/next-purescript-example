@@ -1,13 +1,13 @@
 module Pages.NotFound (mkNotFound) where
 
 import Prelude
-import Components.App as App
+import Components.Page as Page
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
-mkNotFound :: App.Component Unit
+mkNotFound :: Page.Component Unit
 mkNotFound = do
-  App.component "NotFound" \_ _ -> pure render
+  Page.component "NotFound" \_ _ -> pure render
   where
   render =
     React.fragment
