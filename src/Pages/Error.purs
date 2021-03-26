@@ -1,13 +1,14 @@
-module Pages.NotFound (mkNotFound) where
+module Pages.Error (mkError) where
 
 import Prelude
+import Affjax.StatusCode (StatusCode(..))
 import Components.Page as Page
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
-mkNotFound :: Page.Component Unit
-mkNotFound = do
-  Page.component "NotFound" \_ _ -> pure render
+mkError :: StatusCode -> Page.Component Unit
+mkError statusCode = do
+  Page.component "Error" \_ _ -> pure render
   where
   render =
     React.fragment
@@ -20,7 +21,10 @@ mkNotFound = do
                       [ R.h1
                           { className: "text-3xl font-bold"
                           , children:
-                              [ R.text "404: Not found"
+                              [ R.text case statusCode of
+                                  StatusCode 404 -> "404: Not Found"
+                                  StatusCode 500 -> "500: Internal Server Error"
+                                  _ -> "Error"
                               ]
                           }
                       , R.div
