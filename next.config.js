@@ -5,6 +5,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const withPreact = require('next-plugin-preact');
 
 module.exports = withBundleAnalyzer(withPreact({
+  target: "serverless",
   webpack(config, { isServer }) {
     // https://github.com/purescript-contrib/purescript-affjax/issues/63
     if (isServer) {

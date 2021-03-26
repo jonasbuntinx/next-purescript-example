@@ -1,7 +1,8 @@
 name: CI
 
 on:
-  pull_request:
+  push:
+    branches: [master]
   workflow_dispatch:
 
 jobs:
@@ -48,3 +49,41 @@ jobs:
       # TEST
       - name: Run tests
         run: yarn test
+
+      # COPY TO DIST
+      - name: Create dist
+        run: mkdir dist
+
+      - name: Copy package.json
+        run: cp package.deploy.json dist/package.json
+
+      - name: Copy toml
+        run: cp netlify.toml dist/netlify.toml
+
+      - name: Copy next.config.js
+        run: cp next.config.js dist/next.config.js
+
+      - name: Copy postcss.config.js
+        run: cp postcss.config.js dist/postcss.config.js
+
+      - name: Copy tailwind.config.js
+        run: cp tailwind.config.js dist/tailwind.config.js
+
+      - name: Copy output to dist
+        run: cp -r --parents output dist
+
+      - name: Copy pages to dist
+        run: cp -r --parents pages dist
+
+      - name: Copy styles to dist
+        run: cp -r --parents styles dist
+
+      # PUBLISH
+      - name: Publish to demo branch
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: demo
+          FOLDER: dist
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
