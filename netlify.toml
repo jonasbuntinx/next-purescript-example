@@ -1,9 +1,11 @@
+
 [build]
-  command   = "#"
-  functions = "out_functions"
-  publish   = "out_publish"
+  command   = "yarn build"
+  publish   = "out"
 
 [dev]
-  functions = "out_functions"
-  publish   = "out_publish"
-  framework = "#static"
+  command   = "yarn dev"
+  publish   = "out"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
