@@ -8,8 +8,6 @@ import Context.Settings (mkSettingsProvider)
 import Control.Monad.Reader (runReaderT)
 import Data.Tuple.Nested ((/\))
 import Effect.Uncurried (EffectFn1, mkEffectFn1)
-import Next.Head as N
-import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
 type Props props
@@ -26,14 +24,7 @@ mkApp =
     pure
       $ settingsProvider
       $ React.fragment
-          [ N.head
-              { children:
-                  [ R.title
-                      { children: [ R.text "Next.js with Purescript Example" ]
-                      }
-                  ]
-              }
-          , loading unit
+          [ loading unit
           , navigation
           , component props.pageProps
           ]
