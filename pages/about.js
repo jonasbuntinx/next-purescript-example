@@ -1,3 +1,1 @@
-import { mkAbout } from "../output/Pages.About/index.js";
-
-export default mkAbout;
+export { mkAbout as default } from "../output/Pages.About/index.js";
