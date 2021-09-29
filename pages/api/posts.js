@@ -1,0 +1,1 @@
+export { fetchData as default } from "../../output/Pages.Api.Posts/index.js"
