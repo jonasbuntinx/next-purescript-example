@@ -26,26 +26,26 @@
     "test": "spago test"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^3.4.2",
-    "purescript": "^0.14.2",
+    "@netlify/plugin-nextjs": "^3.9.2",
+    "purescript": "^0.14.5",
     "purty": "^7.0.0",
     "spago": "^0.20.3",
     "zephyr": "https://github.com/jonasbuntinx/zephyr.git"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^10.2.3",
-    "autoprefixer": "^10.2.6",
+    "@next/bundle-analyzer": "^12.0.2",
+    "autoprefixer": "^10.4.0",
     "cross-env": "^7.0.3",
-    "next": "^10.2.3",
+    "next": "^12.0.2",
     "next-plugin-preact": "^3.0.6",
-    "postcss": "^8.3.0",
-    "preact": "^10.5.13",
+    "postcss": "^8.3.11",
+    "preact": "^10.5.15",
     "preact-render-to-string": "^5.1.19",
     "react": "npm:@preact/compat@0.0.4",
     "react-dom": "npm:@preact/compat@0.0.4",
     "react-ssr-prepass": "npm:preact-ssr-prepass@1.1.3",
-    "string-replace-loader": "^3.0.2",
-    "tailwindcss": "^2.1.4",
+    "string-replace-loader": "^3.0.3",
+    "tailwindcss": "^2.2.19",
     "xhr2": "^0.2.1"
   }
 }
