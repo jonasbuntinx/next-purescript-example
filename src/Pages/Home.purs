@@ -17,8 +17,9 @@ import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
 type Props
-  = { header :: String
-    }
+  =
+  { header :: String
+  }
 
 mkHome :: Page.Component Props
 mkHome = do

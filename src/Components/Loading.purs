@@ -22,7 +22,8 @@ mkLoading =
       $ R.div
           { className:
               "fixed top-0 left-0 right-0 pointer-events-none transition-opacity delay-500"
-                <> if isLoading then
+                <>
+                  if isLoading then
                     " opacity-1"
                   else
                     " opacity-0"

@@ -12,9 +12,10 @@ import Effect.Uncurried (EffectFn1, mkEffectFn1)
 import React.Basic.Hooks as React
 
 type Props props
-  = { "Component" :: Page.Component props
-    , pageProps :: props
-    }
+  =
+  { "Component" :: Page.Component props
+  , pageProps :: props
+  }
 
 mkApp :: forall props. Effect (EffectFn1 (Props props) React.JSX)
 mkApp = do
