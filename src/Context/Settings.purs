@@ -6,8 +6,8 @@ import Data.Tuple.Nested (type (/\), (/\))
 import Effect (Effect)
 import React.Basic.Hooks as React
 
-type Context
-  = React.ReactContext (Maybe String)
+type Context =
+  React.ReactContext (Maybe String)
 
 mkSettingsProvider :: Effect (Context /\ (React.JSX -> React.JSX))
 mkSettingsProvider = do

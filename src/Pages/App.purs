@@ -11,8 +11,7 @@ import Effect (Effect)
 import Effect.Uncurried (EffectFn1, mkEffectFn1)
 import React.Basic.Hooks as React
 
-type Props props
-  =
+type Props props =
   { "Component" :: Page.Component props
   , pageProps :: props
   }

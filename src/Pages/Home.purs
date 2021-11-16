@@ -16,8 +16,7 @@ import Effect.Uncurried (EffectFn1, mkEffectFn1)
 import React.Basic.DOM as R
 import React.Basic.Hooks as React
 
-type Props
-  =
+type Props =
   { header :: String
   }
 

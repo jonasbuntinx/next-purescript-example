@@ -5,8 +5,7 @@ import Prim.Row (class Union)
 import React.Basic.Hooks (JSX, ReactComponent, element)
 
 -- | Components
-type Props_html
-  =
+type Props_html =
   ( children :: Array JSX
   )
 
@@ -19,8 +18,7 @@ html attrs = element _html attrs
 
 foreign import _html :: forall attrs. ReactComponent attrs
 
-type Props_head
-  =
+type Props_head =
   ( children :: Array JSX
   , nonce :: String
   , crossOrigin :: String
@@ -35,8 +33,7 @@ head attrs = element _head attrs
 
 foreign import _head :: forall attrs. ReactComponent attrs
 
-type Props_main
-  =
+type Props_main =
   ( children :: Array JSX
   )
 
@@ -49,8 +46,7 @@ main attrs = element _main attrs
 
 foreign import _main :: forall attrs. ReactComponent attrs
 
-type Props_nextScript
-  =
+type Props_nextScript =
   ( children :: Array JSX
   , nonce :: String
   , crossOrigin :: String

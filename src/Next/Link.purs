@@ -3,8 +3,7 @@ module Next.Link where
 import Prim.Row (class Union)
 import React.Basic.Hooks (JSX, ReactComponent, element)
 
-type Props_link
-  =
+type Props_link =
   ( children :: JSX
   , href :: String
   , as :: String

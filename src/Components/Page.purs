@@ -7,8 +7,8 @@ import Effect.Class (liftEffect)
 import Env (Env)
 import React.Basic.Hooks as React
 
-type Component props
-  = ReaderT Env Effect (props -> React.JSX)
+type Component props =
+  ReaderT Env Effect (props -> React.JSX)
 
 component ::
   forall props hooks.
