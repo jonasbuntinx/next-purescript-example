@@ -28,7 +28,6 @@
   "devDependencies": {
     "@netlify/plugin-nextjs": "^3.9.2",
     "purescript": "^0.14.5",
-    "purty": "^7.0.0",
     "spago": "^0.20.3",
     "zephyr": "https://github.com/jonasbuntinx/zephyr.git"
   },

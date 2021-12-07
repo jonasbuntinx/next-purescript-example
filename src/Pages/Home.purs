@@ -71,7 +71,7 @@ fetchData :: forall ctx. ctx -> Aff Props
 fetchData _ = do
   res <- AX.request (AX.defaultRequest { url = Config.apiEndpoint <> "/posts/1", method = Left GET, responseFormat = ResponseFormat.string })
   liftEffect $ Console.log $ either AX.printError _.body res
-  pure $ { header: "Home" }
+  pure { header: "Home" }
 
 getServerSideProps :: forall ctx. EffectFn1 ctx (Promise { props :: Props })
 getServerSideProps =
