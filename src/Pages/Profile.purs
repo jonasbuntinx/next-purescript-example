@@ -13,7 +13,7 @@ mkProfile = do
   render =
     React.fragment
       [ R.div
-          { className: "text-gray-100 max-w-2xl mx-auto my-24 shadow-2xl bg-gray-800 p-12 text-left"
+          { className: "text-slate-100 max-w-2xl mx-auto my-24 shadow-2xl bg-slate-800 p-12 text-left"
           , children:
               [ R.div
                   { className: "rounded-full shadow-xl mx-auto -mt-32 h-48 w-48 bg-cover bg-center"
@@ -80,7 +80,7 @@ mkProfile = do
                           , href: "#"
                           , children:
                               [ SVG.svg
-                                  { className: "h-6 fill-current text-gray-600 hover:text-teal-500"
+                                  { className: "h-6 fill-current text-slate-600 hover:text-teal-500"
                                   , viewBox: "0 0 24 24"
                                   , xmlns: "http://www.w3.org/2000/svg"
                                   , children:
@@ -101,7 +101,7 @@ mkProfile = do
                           , href: "#"
                           , children:
                               [ SVG.svg
-                                  { className: "h-6 fill-current text-gray-600 hover:text-teal-500"
+                                  { className: "h-6 fill-current text-slate-600 hover:text-teal-500"
                                   , viewBox: "0 0 24 24"
                                   , xmlns: "http://www.w3.org/2000/svg"
                                   , children:
@@ -122,7 +122,7 @@ mkProfile = do
                           , href: "#"
                           , children:
                               [ SVG.svg
-                                  { className: "h-6 fill-current text-gray-600 hover:text-teal-500"
+                                  { className: "h-6 fill-current text-slate-600 hover:text-teal-500"
                                   , viewBox: "0 0 24 24"
                                   , xmlns: "http://www.w3.org/2000/svg"
                                   , children:

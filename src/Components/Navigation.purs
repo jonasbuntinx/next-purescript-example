@@ -7,7 +7,7 @@ import React.Basic.Hooks as React
 navigation :: React.JSX
 navigation =
   R.nav
-    { className: "text-gray-800 w-full flex items-center justify-between py-3 px-4"
+    { className: "text-slate-800 w-full flex items-center justify-between py-3 px-4"
     , children:
         [ R.div
             { className: "font-extrabold text-xl"

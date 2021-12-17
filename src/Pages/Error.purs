@@ -16,7 +16,7 @@ mkError statusCode = do
           { className: "max-w-5xl flex mx-auto my-12"
           , children:
               [ R.div
-                  { className: "mr-1 text-gray-100 w-3/5 shadow-2xl bg-gray-800 p-12 text-left"
+                  { className: "mr-1 text-slate-100 w-3/5 shadow-2xl bg-slate-800 p-12 text-left"
                   , children:
                       [ R.h1
                           { className: "text-3xl font-bold"
