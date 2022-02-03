@@ -1,4 +1,4 @@
-module Pages.Home (Props, mkHome, getServerSideProps) where
+module Pages.Home (mkHome, getServerSideProps) where
 
 import Prelude
 import Affjax as AX

@@ -1,6 +1,5 @@
 module Next.Document where
 
-import Effect (Effect)
 import Prim.Row (class Union)
 import React.Basic.Hooks (JSX, ReactComponent, element)
 
@@ -60,6 +59,3 @@ nextScript ::
 nextScript attrs = element _nextScript attrs
 
 foreign import _nextScript :: forall attrs. ReactComponent attrs
-
--- | Document
-foreign import unsafeDocument :: forall props. ReactComponent props -> Effect (ReactComponent props)
