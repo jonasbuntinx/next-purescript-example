@@ -1,7 +1,7 @@
 module Pages.Home (mkHome, getServerSideProps) where
 
 import Prelude
-import Affjax as AX
+import Affjax.Node as AX
 import Affjax.ResponseFormat as ResponseFormat
 import Components.Page as Page
 import Config as Config
