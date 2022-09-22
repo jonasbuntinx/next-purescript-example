@@ -1,1 +1,1 @@
-exports._link = require("next/link").default;
+export { default as _link } from "next/link";

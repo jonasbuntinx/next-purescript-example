@@ -1,5 +1,5 @@
-var React = require("react");
-var head = require("next/head").default;
+import * as React from "react";
+import { default as head } from "next/head";
 
 function onlyReactElement(list, child) {
   if (typeof child === 'string' || typeof child === 'number') {
@@ -16,8 +16,8 @@ function onlyReactElement(list, child) {
   return list.concat(child);
 }
 
-exports._head = function(props) {
-  var children = React.Children.toArray(props.children)
+export function _head(props) {
+  const children = React.Children.toArray(props.children)
     .reduce(onlyReactElement, [])
     .map(child => {
       if(typeof child.type === 'object' && child.type.render) {

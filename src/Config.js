@@ -1,1 +1,1 @@
-exports.apiEndpoint = process.env.API_ENDPOINT || "";
+export const apiEndpoint = process.env.API_ENDPOINT || "";

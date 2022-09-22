@@ -1,9 +1,1 @@
-var document = require("next/document");
-
-exports._html = document.Html;
-
-exports._head = document.Head;
-
-exports._main = document.Main;
-
-exports._nextScript = document.NextScript;
+export { Html as _html, Head as _head, Main as _main, NextScript as _nextScript } from "next/document";
