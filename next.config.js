@@ -1,3 +1,3 @@
-import withPreact from "next-plugin-preact"
+const nextConfig = { reactStrictMode: true };
 
-export const nextConfig = withPreact({});
+export default nextConfig;
