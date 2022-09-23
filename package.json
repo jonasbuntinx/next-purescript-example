@@ -12,7 +12,6 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "analyze": "cross-env ANALYZE=true spago build",
     "build": "yarn build:clean && yarn build:spago && yarn build:next",
     "build:clean": "rm -Rf output",
     "build:spago": "spago -x spago.production.dhall build",
@@ -27,7 +26,6 @@
     "test": "spago test"
   },
   "devDependencies": {
-    "@netlify/plugin-nextjs": "^4.23.1",
     "purescript": "^0.15.4",
     "purescript-psa": "^0.8.2",
     "purs-backend-es": "^1.1.0",
@@ -35,17 +33,15 @@
     "spago": "^0.20.9"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^12.3.1",
     "autoprefixer": "^10.4.2",
-    "cross-env": "^7.0.3",
     "next": "^12.3.1",
     "next-plugin-preact": "^3.0.7",
     "postcss": "^8.4.6",
     "preact": "^10.11.0",
     "preact-render-to-string": "^5.2.4",
-    "react": "npm:@preact/compat",
-    "react-dom": "npm:@preact/compat",
-    "react-ssr-prepass": "npm:preact-ssr-prepass",
+    "react": "npm:@preact/compat@17.1.1",
+    "react-dom": "npm:@preact/compat@17.1.1",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@1.2.0",
     "tailwindcss": "^3.0.18",
     "xhr2": "^0.2.1"
   }
