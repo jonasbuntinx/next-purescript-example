@@ -10,7 +10,6 @@
   ],
   "author": "Jonas Buntinx",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "build": "yarn build:clean && yarn build:spago && yarn build:next",
     "build:clean": "rm -Rf output",

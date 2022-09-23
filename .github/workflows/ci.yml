@@ -60,11 +60,11 @@ jobs:
       - name: Copy next.config.js
         run: cp next.config.js dist/next.config.js
 
-      - name: Copy postcss.config.cjs
-        run: cp postcss.config.cjs dist/postcss.config.cjs
+      - name: Copy postcss.config.js
+        run: cp postcss.config.js dist/postcss.config.js
 
-      - name: Copy tailwind.config.cjs
-        run: cp tailwind.config.cjs dist/tailwind.config.cjs
+      - name: Copy tailwind.config.js
+        run: cp tailwind.config.js dist/tailwind.config.js
 
       - name: Copy output to dist
         run: cp -r --parents output dist
