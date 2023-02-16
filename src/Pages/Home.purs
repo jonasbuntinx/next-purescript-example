@@ -49,7 +49,7 @@ mkHome = do
                       , R.p
                           { className: "pt-4 text-sm"
                           , children:
-                              [ R.text "Welcome to my Next.js with Purescript Example!"
+                              [ R.text "Purescript Example - changed!"
                               ]
                           }
                       ]
@@ -59,7 +59,7 @@ mkHome = do
                   , children:
                       [ R.img
                           { className: "shadow-2xl"
-                          , src: "https://source.unsplash.com/IuLgi9PWETU"
+                          , src: "https://source.unsplash.com/cvBBO4PzWPg"
                           }
                       ]
                   }

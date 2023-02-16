@@ -9,6 +9,7 @@
   , "either"
   , "http-methods"
   , "maybe"
+  , "node-http"
   , "prelude"
   , "react-basic-dom"
   , "react-basic-hooks"
